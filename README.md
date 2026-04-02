@@ -1,8 +1,8 @@
-﻿# ðŸŽ“ Komuny Edu
-### IA para Educadores Latinoamericanos â€” Open Source
+﻿# Komuny Edu
+### IA para Educadores Latinoamericanos — Open Source
 
 > **La inteligencia artificial debe ser accesible para todos los docentes**, no solo para quienes saben programar.
-> Komuny Edu es una comunidad y repositorio open source de recursos prÃ¡cticos para integrar IA en el aula.
+> Komuny Edu es una comunidad y repositorio open source de recursos practicos para integrar IA en el aula.
 
 [![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4%EF%B8%8F-brightgreen)](https://github.com/german-gimenez/komuny)
 [![Licencia MIT](https://img.shields.io/badge/Licencia-MIT-purple)](LICENSE)
@@ -12,122 +12,98 @@
 
 ---
 
-## ðŸŒŽ Â¿QuÃ© es Komuny Edu?
+## Que es Komuny Edu?
 
-Komuny Edu naciÃ³ de una pregunta simple: **Â¿por quÃ© los docentes latinoamericanos no tienen acceso a recursos de IA en su idioma, adaptados a su realidad?**
+Komuny Edu nacio de una pregunta simple: **por que los docentes latinoamericanos no tienen acceso a recursos de IA en su idioma, adaptados a su realidad?**
 
-Este repositorio es la respuesta. Es un espacio colaborativo donde educadores de toda la regiÃ³n pueden encontrar, usar y contribuir herramientas concretas para integrar inteligencia artificial en su prÃ¡ctica docente â€” sin necesitar saber programar, sin barreras de idioma y sin costo.
+Este repositorio es la respuesta. Un espacio colaborativo donde educadores de toda la region pueden encontrar, usar y contribuir herramientas concretas para integrar IA en su practica docente — sin necesitar saber programar, sin barreras de idioma y sin costo.
 
-### Â¿Para quiÃ©n es?
-- ðŸ‘©â€ðŸ« Maestros de primaria y secundaria
-- ðŸŽ“ Profesores universitarios
-- ðŸ“š Coordinadores pedagÃ³gicos
-- ðŸ« Directivos que quieren innovar en sus instituciones
-- ðŸŒ± Cualquier educador curioso sobre la IA
+### Para quien es?
+- Maestros de primaria y secundaria
+- Profesores universitarios
+- Coordinadores pedagogicos
+- Directivos que quieren innovar
+- Cualquier educador curioso sobre la IA
 
 ---
 
-## ðŸ“‚ Â¿QuÃ© encontrarÃ¡s aquÃ­?
+## Que encontraras aqui?
 
-| Recurso | DescripciÃ³n | Estado |
+| Recurso | Descripcion | Estado |
 |--------|-------------|--------|
-| ðŸ“– [Glosario](glosario/glosario-ia-docentes.md) | TÃ©rminos de IA explicados sin tecnicismos | âœ… Disponible |
-| ðŸ¤– [Skills para Claude](skills/) | Configuraciones listas para tareas docentes | âœ… Disponible |
-| ðŸŽ« [Templates de Prompts](templates/prompts-para-docentes.md) | Tickets listos para copiar y pegar | âœ… Disponible |
-| ðŸ“š [GuÃ­as paso a paso](guides/primera-clase-con-ia.md) | Desde cero hasta tu primera clase con IA | âœ… Disponible |
-| ðŸ’¡ [Ejemplos reales](examples/) | Casos de uso de docentes de la regiÃ³n | ðŸ”œ En construcciÃ³n |
+| [Glosario](glosario/glosario-ia-docentes.md) | 30+ terminos de IA explicados sin tecnicismos | Disponible |
+| [Skills para Claude](skills/) | Configuraciones listas para tareas docentes | Disponible |
+| [Templates de Prompts](templates/prompts-para-docentes.md) | Tickets listos para copiar y pegar | Disponible |
+| [Guias paso a paso](guides/primera-clase-con-ia.md) | Desde cero hasta tu primera clase con IA | Disponible |
+| [Herramientas gratuitas](recursos/herramientas-gratuitas.md) | Directorio de recursos, descuentos y portales regionales | Disponible |
+| [Ejemplos reales](examples/) | Casos de uso de docentes de la region | En construccion |
 
 ---
 
-## ðŸš€ Empieza aquÃ­
+## Por donde empezar?
 
-### Si eres nuevo en IA:
-1. Lee el [Glosario](glosario/glosario-ia-docentes.md) â€” 20+ tÃ©rminos explicados para docentes
-2. Sigue la [GuÃ­a: Tu primera clase con IA en 30 minutos](guides/primera-clase-con-ia.md)
-3. Usa los [Templates de Prompts](templates/prompts-para-docentes.md) listos para copiar
-
-### Si ya usas IA y quieres ir mÃ¡s lejos:
-1. Explora los [Skills para Claude](skills/) â€” configuraciones avanzadas
-2. Comparte tu experiencia abriendo un [Issue](https://github.com/german-gimenez/komuny/issues/new)
-3. Contribuye con tus propios prompts o guÃ­as â€” ver [CONTRIBUTING.md](CONTRIBUTING.md)
+1. **Soy nuevo en IA** — Lee el [Glosario](glosario/glosario-ia-docentes.md)
+2. **Quiero usar Claude en clase** — Ve a [Skills](skills/)
+3. **Necesito prompts listos** — Explora los [Templates](templates/)
+4. **Quiero aprender paso a paso** — Lee las [Guias](guides/)
+5. **Busco herramientas gratuitas** — Ver [Recursos](recursos/herramientas-gratuitas.md)
 
 ---
 
-## ðŸ”§ Herramientas que usamos
+## Sitio Web
 
-Este proyecto estÃ¡ diseÃ±ado principalmente para **[Claude](https://claude.ai)** de Anthropic, pero los prompts y recursos son adaptables a otras IAs.
-
-### Recursos externos recomendados
-- ðŸ¤– **[Claude.ai](https://claude.ai)** â€” La IA principal que usamos (plan gratuito disponible)
-- ðŸ“˜ **[Anthropic Academy](https://www.anthropic.com/learn)** â€” Cursos gratuitos de IA
-- ðŸ› ï¸ **[Docs de Claude](https://docs.claude.com)** â€” DocumentaciÃ³n tÃ©cnica oficial
-- ðŸŒ **[Prompt Engineering Guide](https://www.promptingguide.ai/es)** â€” GuÃ­a de prompts en espaÃ±ol
-- ðŸ“– **[AI for Education (a16z)](https://a16z.com/ai-for-education/)** â€” Recursos sobre IA educativa
-- ðŸŽ“ **[Coursera: IA para todos](https://www.coursera.org/learn/ai-for-everyone-es)** â€” Curso de Andrew Ng en espaÃ±ol
+Visita [komuny.org](https://komuny.org) para explorar los recursos en formato web interactivo con busqueda y filtros.
 
 ---
 
-## ðŸ¤ CÃ³mo contribuir
+## Redes Sociales
 
-Este proyecto crece con la comunidad. **Cualquier docente puede contribuir**, sin importar su nivel tÃ©cnico.
-
-### Formas de participar:
-- âœï¸ **Agregar tÃ©rminos** al glosario
-- ðŸ¤– **Compartir un skill** o prompt que te funcionÃ³ en el aula
-- ðŸ“ **Escribir una guÃ­a** basada en tu experiencia real
-- ðŸŒŽ **Traducir contenido** al portuguÃ©s u otros idiomas
-- â­ **Dar una estrella** al repo para ayudar a que mÃ¡s docentes lo encuentren
-- ðŸ› **Reportar errores** o sugerir mejoras
-
-**â†’ Lee [CONTRIBUTING.md](CONTRIBUTING.md) para ver cÃ³mo empezar**
+- Instagram: [instagram.com/komuny.social](https://www.instagram.com/komuny.social/)
+- Facebook: [facebook.com/komuny.social](https://www.facebook.com/komuny.social/)
+- LinkedIn: [linkedin.com/company/komuny](https://www.linkedin.com/company/komuny/)
+- GitHub: [github.com/german-gimenez/komuny](https://github.com/german-gimenez/komuny)
 
 ---
 
-## ðŸŒ Sitio Web
+## Como contribuir?
 
-ExplorÃ¡ todos los recursos en formato web interactivo:
+Este proyecto crece con la comunidad. Puedes:
+- Agregar terminos al glosario
+- Compartir un skill o prompt que te funciono
+- Escribir una guia basada en tu experiencia real
+- Traducir contenido al portugues
+- Dar una estrella al repo para que mas docentes lo encuentren
 
-**[ðŸ”— komuny.org](https://komuny.org)**
-
-Incluye glosario con bÃºsqueda, filtros por categorÃ­a y ejemplos expandibles.
+Ver [CONTRIBUTING.md](CONTRIBUTING.md) para mas detalles.
 
 ---
 
-## ðŸ“‹ AplicaciÃ³n al Programa Claude for Open Source
+## Aplicacion al Programa Claude for Open Source
 
-Este proyecto aplica al **[Programa Claude for Open Source de Anthropic](https://claude.com/contact-sales/claude-for-oss)**, que otorga 6 meses de Claude Max gratuito a maintainers de proyectos open source con impacto real en el ecosistema.
+Este proyecto aplica al [Programa Claude for Open Source de Anthropic](https://claude.com/contact-sales/claude-for-oss), que otorga 6 meses de Claude Max gratuito a maintainers de proyectos open source con impacto real.
 
-**Â¿Por quÃ© Komuny Edu califica?**
-- Repositorio pÃºblico con licencia MIT
+**Por que Komuny Edu califica:**
+- Repositorio publico con licencia MIT
 - Impacto directo en la comunidad educativa de LATAM
-- Recursos en espaÃ±ol para una audiencia no atendida por la mayorÃ­a de proyectos de IA
-- Foco en democratizaciÃ³n del acceso a la IA, alineado con la misiÃ³n de Anthropic
+- Recursos en espanol para una audiencia no atendida por la mayoria de proyectos de IA
+- Foco en democratizacion del acceso a la IA, alineado con la mision de Anthropic
 
 ---
 
-## ðŸ“„ Licencia
+## Licencia
 
-Este proyecto estÃ¡ bajo la **Licencia MIT**. PodÃ©s usar, modificar y distribuir el contenido libremente, siempre que se mantenga la atribuciÃ³n.
-
-Ver [LICENSE](LICENSE) para mÃ¡s detalles.
+MIT (c) [Napsix.AI](https://napsix.ai) — Ver [LICENSE](LICENSE)
 
 ---
 
-## ðŸ‘¥ Equipo
+## Equipo
 
-Creado y mantenido por:
+Creado y mantenido por **German Gimenez**
+CTO & Co-Founder — [Napsix.AI](https://napsix.ai)
+Mendoza, Argentina
 
-**[GermÃ¡n GimÃ©nez](https://github.com/german-gimenez)**
-CTO & Co-Founder de [Napsix.AI](https://napsix.ai)
-Mendoza, Argentina ðŸ‡¦ðŸ‡·
-
-> Napsix.AI es una agencia de inteligencia artificial enfocada en la **democratizaciÃ³n del acceso a la IA** en AmÃ©rica Latina, con Ã©nfasis en sostenibilidad e inclusiÃ³n.
-
-[![Napsix.AI](https://img.shields.io/badge/Napsix.AI-Sitio%20Web-black)](https://napsix.ai)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-GermÃ¡n%20GimÃ©nez-blue)](https://linkedin.com/in/germangimenez)
+> Napsix.AI es una agencia de inteligencia artificial enfocada en la democratizacion del acceso a la IA en America Latina.
 
 ---
 
-*Hecho con â¤ï¸ para docentes de AmÃ©rica Latina Â· [Napsix.AI](https://napsix.ai) Â· Mendoza, Argentina*
-
-
+*Hecho con amor para docentes de America Latina — [Napsix.AI](https://napsix.ai) — komuny.org*
