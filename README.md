@@ -34,7 +34,8 @@ Este repositorio es la respuesta. Un espacio colaborativo donde educadores de to
 | [Glosario](glosario/glosario-ia-docentes.md) | 30+ terminos de IA explicados sin tecnicismos | Disponible |
 | [Skills para Claude](skills/) | Configuraciones listas para tareas docentes | Disponible |
 | [Templates de Prompts](templates/prompts-para-docentes.md) | Tickets listos para copiar y pegar | Disponible |
-| [Guias paso a paso](guides/primera-clase-con-ia.md) | Desde cero hasta tu primera clase con IA | Disponible |
+| [Guias paso a paso](guides/) | 5 guias: primera clase, evaluacion, NotebookLM, inclusion, proyectos | Disponible |
+| [Skills para Claude](skills/) | 5 skills: planificacion, evaluacion, familias, adaptacion, tutor socratico | Disponible |
 | [Herramientas gratuitas](recursos/herramientas-gratuitas.md) | Directorio de recursos, descuentos y portales regionales | Disponible |
 | [Ejemplos reales](examples/) | Casos de uso de docentes de la region | En construccion |
 
