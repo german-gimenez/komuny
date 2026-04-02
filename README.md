@@ -87,7 +87,7 @@ Este proyecto crece con la comunidad. **Cualquier docente puede contribuir**, si
 
 Explorá todos los recursos en formato web interactivo:
 
-**[🔗 komuny-edu.vercel.app](https://komuny-edu.vercel.app)**
+**[🔗 komuny.org](https://komuny.org)**
 
 Incluye glosario con búsqueda, filtros por categoría y ejemplos expandibles.
 
