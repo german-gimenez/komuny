@@ -97,22 +97,6 @@ Ver [CONTRIBUTING.md](CONTRIBUTING.md) para mas detalles.
 
 ---
 
-## Aplicacion al Programa Claude for Open Source
-
-Este proyecto aplica al [Programa Claude for Open Source de Anthropic](https://claude.com/contact-sales/claude-for-oss),
-que otorga 6 meses de Claude Max gratuito a maintainers de proyectos open source con impacto real.
-
-**Por que Komuny Edu califica:**
-- Repositorio publico con licencia MIT
-- Impacto directo en la comunidad educativa de LATAM
-- Recursos en espanol para una audiencia no atendida por la mayoria de proyectos de IA
-- Foco en democratizacion del acceso a la IA, alineado con la mision de Anthropic
-- Respaldado por la Fundacion Komuny Social (Persona Juridica, CUIT 30-71735388-5)
-- Declarado de Interes por el Senado de la Provincia de Mendoza (2022)
-- Convenio activo con el Instituto de Educacion Superior IES 9-029
-
----
-
 ## Licencia
 
 MIT (c) [Napsix.AI](https://napsix.ai) -- Ver [LICENSE](LICENSE)
