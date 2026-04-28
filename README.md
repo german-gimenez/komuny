@@ -44,14 +44,31 @@ Ver [documentacion completa de la Fundacion](fundacion/README.md) y [reconocimie
 
 ---
 
+## Herramientas IA (Nuevo)
+
+Komuny Edu ahora tiene **5 herramientas generativas de IA** directamente en la web.
+Gratis, sin cuenta, en espanol. Accede en [komuny.org/herramientas](https://komuny.org/herramientas)
+
+| Herramienta | Descripcion | Link |
+|------------|-------------|------|
+| Generador de Rubrica | Rubricas completas con niveles de desempeno | [komuny.org/herramientas/rubrica](https://komuny.org/herramientas/rubrica) |
+| Planificador de Clases | Planificaciones didacticas completas | [komuny.org/herramientas/planificador](https://komuny.org/herramientas/planificador) |
+| Simplificador de Textos | Adapta textos a cualquier nivel | [komuny.org/herramientas/simplificador](https://komuny.org/herramientas/simplificador) |
+| Detector de Sesgos | Analiza materiales para hacerlos inclusivos | [komuny.org/herramientas/detector-sesgos](https://komuny.org/herramientas/detector-sesgos) |
+| Banco de Preguntas | Preguntas por Taxonomia de Bloom | [komuny.org/herramientas/preguntas](https://komuny.org/herramientas/preguntas) |
+
+Ver [guia completa de uso](guides/06-herramientas-ia-komuny.md) y [templates](templates/templates-herramientas-ia.md).
+
+---
+
 ## Que encontraras aqui?
 
 | Recurso | Descripcion | Estado |
 |--------|-------------|--------|
 | [Glosario](glosario/glosario-ia-docentes.md) | 30+ terminos de IA explicados sin tecnicismos | Disponible |
-| [Skills para Claude](skills/) | Configuraciones listas para tareas docentes | Disponible |
-| [Templates de Prompts](templates/prompts-para-docentes.md) | Tickets listos para copiar y pegar | Disponible |
-| [Guias paso a paso](guides/) | 5 guias: primera clase, evaluacion, NotebookLM, inclusion, proyectos | Disponible |
+| [Skills para Claude](skills/) | 7 configuraciones listas para tareas docentes | Disponible |
+| [Templates de Prompts](templates/) | Tickets listos para copiar y pegar | Disponible |
+| [Guias paso a paso](guides/) | 6 guias: primera clase, evaluacion, NotebookLM, inclusion, proyectos, herramientas IA | Disponible |
 | [Herramientas gratuitas](recursos/herramientas-gratuitas.md) | Directorio de recursos, descuentos y portales regionales | Disponible |
 | [Fundacion](fundacion/README.md) | Mision, valores y reconocimientos institucionales | Disponible |
 | [Ejemplos reales](examples/) | Casos de uso de docentes de la region | En construccion |
@@ -60,12 +77,13 @@ Ver [documentacion completa de la Fundacion](fundacion/README.md) y [reconocimie
 
 ## Por donde empezar?
 
-1. **Soy nuevo en IA** -- Lee el [Glosario](glosario/glosario-ia-docentes.md)
-2. **Quiero usar Claude en clase** -- Ve a [Skills](skills/)
-3. **Necesito prompts listos** -- Explora los [Templates](templates/)
-4. **Quiero aprender paso a paso** -- Lee las [Guias](guides/)
-5. **Busco herramientas gratuitas** -- Ver [Recursos](recursos/herramientas-gratuitas.md)
-6. **Quiero conocer la Fundacion** -- Ver [fundacion/README.md](fundacion/README.md)
+1. **Quiero generar materiales ahora mismo** -- Ve a [Herramientas IA](https://komuny.org/herramientas)
+2. **Soy nuevo en IA** -- Lee el [Glosario](glosario/glosario-ia-docentes.md)
+3. **Quiero usar Claude en clase** -- Ve a [Skills](skills/)
+4. **Necesito prompts listos** -- Explora los [Templates](templates/)
+5. **Quiero aprender paso a paso** -- Lee las [Guias](guides/)
+6. **Busco herramientas gratuitas** -- Ver [Recursos](recursos/herramientas-gratuitas.md)
+7. **Quiero conocer la Fundacion** -- Ver [fundacion/README.md](fundacion/README.md)
 
 ---
 

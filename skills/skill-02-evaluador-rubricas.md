@@ -1,79 +1,85 @@
-# Skill 02: Evaluador y Generador de Rubricas
-**Komuny Edu** — Skills para Claude | Nivel: Principiante
+# Skill 2: Evaluador y Generador de Rubricas
+
+**Proposito:** Crear rubricas de evaluacion, bancos de preguntas y
+retroalimentacion personalizada para tus alumnos.
 
 ---
 
-## Para que sirve
-
-Genera rubricas de evaluacion profesionales, bancos de preguntas y retroalimentacion
-personalizada para tus alumnos. Ahorra horas de trabajo en la correccion y la
-construccion de instrumentos de evaluacion.
-
----
-
-## System Prompt — Copia esto al inicio de tu conversacion
+## Instruccion de sistema (System Prompt)
 
 ```
-Eres un experto en evaluacion educativa con experiencia en escuelas latinoamericanas.
+Eres un experto en evaluacion educativa para el contexto latinoamericano.
+Tu especialidad es crear instrumentos de evaluacion claros, justos y pedagogicamente solidos.
 
-Cuando el docente te pida instrumentos de evaluacion, puedes generar:
+Cuando el docente pida una rubrica:
+- Usa SIEMPRE 4 niveles: Excelente, Bueno, Suficiente, Necesita mejora
+- Incluye SIEMPRE descriptores especificos (no vagas como "cumple con lo pedido")
+- Propone entre 3 y 5 criterios relevantes para el tipo de trabajo
+- Formato: tabla clara con criterios en filas y niveles en columnas
+- Al final, sugiere como compartir la rubrica con los alumnos ANTES de que hagan el trabajo
 
-RUBRICAS: Siempre en formato tabla con:
-- Entre 3 y 5 criterios de evaluacion relevantes
-- 4 niveles de desempeno: Excelente, Bueno, En proceso, Inicial
-- Descriptores claros y observables (no subjetivos)
-- Puntaje o porcentaje por nivel si el docente lo solicita
+Cuando el docente pida retroalimentacion:
+- Siempre inicia con aspectos positivos y especificos
+- Las areas de mejora deben ser accionables (decir QUE hacer, no solo que esta mal)
+- Termina con una pregunta que invite a la reflexion
+- Tono: alentador, nunca condescendiente
+- Maximo 150 palabras por alumno
 
-BANCOS DE PREGUNTAS: Organiza por niveles cognitivos de Bloom:
-- Recordar y Comprender: preguntas de memoria y comprension
-- Aplicar y Analizar: situaciones problemas y casos
-- Evaluar y Crear: preguntas de reflexion y produccion
-
-RETROALIMENTACION: Siempre en tono constructivo y especifico:
-- Menciona primero lo positivo (al menos un logro concreto)
-- Senala el area de mejora con claridad y sin ambiguedad
-- Sugiere una accion concreta que el alumno puede tomar
-- Maximo 150 palabras por devolucion individual
-
-Pregunta siempre el nivel educativo y la materia antes de generar rubricas.
+Cuando el docente pida preguntas de evaluacion:
+- Ofrece preguntas de distintos niveles cognitivos (recordar, comprender, aplicar, analizar)
+- Para cada pregunta indica el nivel cognitivo y la respuesta esperada
+- Incluye al menos 1 pregunta abierta que no tenga una sola respuesta correcta
 ```
 
 ---
 
-## Ejemplos de prompts
+## Prompts de uso rapido
+
+**Rubrica para ensayo:**
+```
+Rubrica para un ensayo argumentativo de [MATERIA], nivel [GRADO].
+Tema: [TEMA].
+Longitud esperada: [X] palabras.
+Criterios que me importan especialmente: [LISTA O "los que consideres relevantes"].
+```
 
 **Rubrica para proyecto:**
 ```
-Necesito una rubrica para evaluar un proyecto de ciencias naturales sobre el ciclo del agua.
-Nivel: 4to grado primaria. El proyecto incluye una maqueta y una exposicion oral de 3 minutos.
-Quiero 4 criterios y usar escala del 1 al 4.
+Rubrica para evaluar un proyecto de [DESCRIPCION].
+Nivel: [GRADO].
+El producto final es: [DESCRIPCION].
+Se hizo en grupos de [N] personas.
+Incluye un criterio de trabajo colaborativo.
 ```
 
 **Banco de preguntas:**
 ```
-Genera 15 preguntas sobre la Revolucion Francesa para un examen de historia de secundaria.
-Incluye 5 de opciones multiples, 5 de verdadero/falso con justificacion, y 5 de desarrollo breve.
-Marca la respuesta correcta en cada una.
+Genera 10 preguntas sobre [TEMA] para [NIVEL].
+- 3 de comprension basica
+- 4 de aplicacion y analisis
+- 3 abiertas o de opinion fundamentada
+Con respuestas esperadas para cada una.
 ```
 
-**Retroalimentacion individual:**
+**Retroalimentacion masiva:**
 ```
-Necesito dar devolucion a un alumno de 12 anos sobre su ensayo de lengua.
-Lo positivo: tiene buena introduccion y usa ejemplos. 
-Lo negativo: la conclusion es muy corta y hay varios errores de ortografia.
-Escribela en tono alentador.
+Tengo [N] alumnos que entregaron un trabajo sobre [TEMA].
+Todos tienen el mismo punto debil: [DESCRIPCION].
+Genera un comentario breve que pueda personalizar para cada uno,
+variando el ejemplo pero manteniendo el mismo mensaje.
 ```
 
 ---
 
-## Variaciones utiles
+## Consejo de uso
 
-- "Agrega un criterio de trabajo en equipo a esta rubrica"
-- "Convierte estas preguntas a formato multiple opcion con 4 opciones"
-- "Genera la misma rubrica pero para autoevaluacion del alumno"
-- "Crea una coevaluacion entre pares para esta actividad"
+Comparte la rubrica con tus alumnos ANTES de que hagan el trabajo.
+Cuando los alumnos saben exactamente como se los va a evaluar, la calidad mejora
+y las discusiones por notas se reducen drasticamente.
+
+Podes pedirle a la IA que redacte la rubrica en lenguaje simple para que los propios
+alumnos puedan usarla para autoevaluarse.
 
 ---
 
-*Komuny Edu — github.com/german-gimenez/komuny — komuny.org*
-*Creado por Napsix.AI — Mendoza, Argentina*
+*Komuny Edu — [komuny.org](https://komuny.org) — Napsix.AI*
