@@ -61,10 +61,23 @@ Ver [guia completa de uso](guides/06-herramientas-ia-komuny.md) y [templates](te
 
 ---
 
+## Novedades del Ecosistema Educativo
+
+Seguimos el ecosistema y respondemos con recursos concretos.
+
+| Novedad | Contexto | Fecha |
+|---------|----------|-------|
+| [El sistema educativo no esta en crisis — esta cumpliendo para lo que fue disenado](novedades/2026-05-reinvencion-educativa.md) | Respuesta a nota de Facundo Vazquez — reinvencion del modelo educativo industrial | Mayo 2026 |
+
+Ver todas las novedades en [komuny.org/novedades](https://komuny.org/novedades)
+
+---
+
 ## Que encontraras aqui?
 
 | Recurso | Descripcion | Estado |
 |--------|-------------|--------|
+| [Novedades](novedades/) | Contexto del ecosistema educativo y respuesta de Komuny | Disponible |
 | [Glosario](glosario/glosario-ia-docentes.md) | 30+ terminos de IA explicados sin tecnicismos | Disponible |
 | [Skills para Claude](skills/) | 7 configuraciones listas para tareas docentes | Disponible |
 | [Templates de Prompts](templates/) | Tickets listos para copiar y pegar | Disponible |
@@ -84,6 +97,7 @@ Ver [guia completa de uso](guides/06-herramientas-ia-komuny.md) y [templates](te
 5. **Quiero aprender paso a paso** -- Lee las [Guias](guides/)
 6. **Busco herramientas gratuitas** -- Ver [Recursos](recursos/herramientas-gratuitas.md)
 7. **Quiero conocer la Fundacion** -- Ver [fundacion/README.md](fundacion/README.md)
+8. **Quiero seguir el ecosistema educativo** -- Ver [Novedades](novedades/)
 
 ---
 
