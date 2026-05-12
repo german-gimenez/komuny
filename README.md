@@ -81,6 +81,8 @@ Ver todas las novedades en [komuny.org/novedades](https://komuny.org/novedades)
 | [Glosario](glosario/glosario-ia-docentes.md) | 30+ terminos de IA explicados sin tecnicismos | Disponible |
 | [Skills para Claude](skills/) | 7 configuraciones listas para tareas docentes | Disponible |
 | [Templates de Prompts](templates/) | Tickets listos para copiar y pegar | Disponible |
+| [Komuny Chat (LibreChat self-hosted)](https://chat.komuny.org) | ChatGPT/Claude para docentes — gratis, en español | Disponible |
+| [12 Prompts LATAM para Komuny Chat](templates/prompts-komuny-chat-latam.md) | Pack curado de prompts listos para usar en chat.komuny.org | Disponible |
 | [Guias paso a paso](guides/) | 6 guias: primera clase, evaluacion, NotebookLM, inclusion, proyectos, herramientas IA | Disponible |
 | [Herramientas gratuitas](recursos/herramientas-gratuitas.md) | Directorio de recursos, descuentos y portales regionales | Disponible |
 | [Fundacion](fundacion/README.md) | Mision, valores y reconocimientos institucionales | Disponible |

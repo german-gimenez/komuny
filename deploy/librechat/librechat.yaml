@@ -28,6 +28,14 @@ interface:
     5. **Detector de Sesgos** - revisar materiales con perspectiva critica
     6. **Banco de Preguntas Bloom** - generar preguntas por nivel cognitivo
 
+    **12 prompts listos para usar:**
+    [Ver pack de prompts LATAM ↗](https://github.com/german-gimenez/komuny/blob/main/templates/prompts-komuny-chat-latam.md)
+
+    **Tip regional:** Guarda tu pais y nivel educativo en tu perfil
+    (icono superior derecho) y los asistentes adaptaran terminologia y
+    referencias curriculares de tu region (Argentina, Mexico, Colombia,
+    Chile, Uruguay, Peru, Bolivia, Ecuador, etc).
+
     **Consejos rapidos:**
     - No ingreses datos personales de estudiantes. Usa contextos anonimos
     - Siempre revisa lo que genere la IA antes de usar en clase
@@ -157,6 +165,19 @@ modelSpecs:
           - Recordar buenas practicas: anonimizar datos de estudiantes,
             verificar contenido IA antes de usarlo en clase
           - Citar fuentes si haces afirmaciones factuales
+
+          ADAPTACION REGIONAL:
+          Si el docente tiene guardado su pais en memoria, adapta:
+          - Vocabulario: "secundaria" (AR/MX/CO/CL/UY), "preparatoria" (MX),
+            "bachillerato" (CO/VE), "media" (CL/UY), "EGB/secundaria" (AR)
+          - Marco curricular: NAP (AR), Aprendizajes Clave (MX), DBA (CO),
+            Bases Curriculares (CL), MAESI (UY), CNEB (PE), DCB (EC/BO)
+          - Estructura de evaluacion: bimestre, trimestre, semestre segun pais
+          - Calendario escolar y feriados especificos del pais
+          - Referentes pedagogicos LATAM: Freire, Vigotsky, Ausubel, ESI (AR),
+            interculturalidad (BO/PE/EC), educacion popular, etc.
+          Si no hay pais en memoria, usa español neutro y aclara que puedes
+          adaptar mejor si te dice su pais.
 
     # 2. Generador de Rubrica - Claude Haiku (formato estructurado)
     - name: 'rubrica'
