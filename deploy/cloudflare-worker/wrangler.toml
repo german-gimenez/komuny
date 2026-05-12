@@ -1,0 +1,13 @@
+# Wrangler config para Komuny Chat Worker
+# Deploy: wrangler deploy
+
+name = "komuny-chat-proxy"
+main = "worker.js"
+compatibility_date = "2024-12-01"
+account_id = "2ea3d43050ece00f3beca49a4bc4bc71"  # NapsixAI Account
+
+# Custom Domain configurado via API (Workers Domains):
+# - hostname: chat.komuny.org
+# - zone_id: d76e5a6105179b9a8a6dc4b02c3acbc5
+# - service: komuny-chat-proxy
+# - environment: production

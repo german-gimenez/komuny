@@ -3,6 +3,11 @@
 Configuracion de **LibreChat** para `chat.komuny.org`, el chat IA completo
 para educadores de Komuny Edu.
 
+> **Nota arquitectonica:** `chat.komuny.org` no apunta directo a Railway.
+> Pasa por un **Cloudflare Worker** que actua como reverse proxy hacia
+> `librechat-production-e10b.up.railway.app`. Ver `../cloudflare-worker/README.md`
+> para detalles.
+
 ## Archivos en esta carpeta
 
 | Archivo | Proposito |
