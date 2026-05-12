@@ -7,7 +7,7 @@ para educadores de Komuny Edu.
 
 | Archivo | Proposito |
 |---------|-----------|
-| `librechat.yaml` | Config principal: branding, 5 presets de docente, endpoint a Vercel AI Gateway |
+| `librechat.yaml` | Config principal: branding + 6 presets de docente con Claude Haiku/Sonnet |
 | `.env.komuny.example` | Template de variables de entorno para Railway |
 | `README.md` | Esta guia |
 

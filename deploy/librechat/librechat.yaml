@@ -105,8 +105,10 @@ rateLimits:
     userWindowInMinutes: 60
 
 # ----------------------------------------------------------------------
-# Endpoints - modelos disponibles para educadores
+# Endpoints - Anthropic Claude (Haiku + Sonnet) para educadores
 # ----------------------------------------------------------------------
+# ANTHROPIC_API_KEY se configura en Railway env vars (NO va aqui).
+# Komuny paga el consumo - educadores no necesitan su propia API key.
 endpoints:
   agents:
     recursionLimit: 25
@@ -114,39 +116,22 @@ endpoints:
     disableBuilder: false
     capabilities: ['execute_code', 'file_search', 'actions', 'tools']
 
-  # Endpoint custom apuntando a Vercel AI Gateway
-  # (reusa el zai/glm-4.7-flash que ya pagas en Komuny)
-  custom:
-    - name: 'Komuny AI Gateway'
-      apiKey: '${VERCEL_AI_GATEWAY_KEY}'
-      baseURL: 'https://ai-gateway.vercel.sh/v1'
-      models:
-        default:
-          - 'zai/glm-4.7-flash'
-          - 'anthropic/claude-sonnet-4-6'
-          - 'openai/gpt-5-mini'
-          - 'openai/gpt-5'
-        fetch: false
-      titleConvo: true
-      titleModel: 'zai/glm-4.7-flash'
-      modelDisplayLabel: 'Komuny AI'
-      iconURL: 'https://komuny.org/logo.svg'
-
 # ----------------------------------------------------------------------
 # Model Specs - 5 presets de docente alineados a herramientas Komuny
 # ----------------------------------------------------------------------
 modelSpecs:
   list:
-    # 1. Asistente general Komuny (default)
+    # 1. Asistente general Komuny (default) - Claude Haiku
     - name: 'komuny-asistente'
       label: 'Asistente Komuny'
       description: 'Tu asistente IA pedagogico generalista en español'
       default: true
       iconURL: 'https://komuny.org/icons/komia.svg'
       preset:
-        endpoint: 'Komuny AI Gateway'
-        model: 'zai/glm-4.7-flash'
+        endpoint: 'anthropic'
+        model: 'claude-haiku-4-5-20251001'
         temperature: 0.7
+        maxOutputTokens: 4096
         promptPrefix: |
           Eres KomIA, asistente IA pedagogico de Komuny Edu para educadores
           de America Latina. Respondes siempre en español neutro LATAM,
@@ -159,15 +144,16 @@ modelSpecs:
             verificar contenido IA antes de usarlo en clase
           - Citar fuentes si haces afirmaciones factuales
 
-    # 2. Generador de Rubrica
+    # 2. Generador de Rubrica - Claude Haiku (formato estructurado)
     - name: 'rubrica'
       label: 'Generador de Rubrica'
       description: 'Crea rubricas de evaluacion claras y alineadas a objetivos'
       iconURL: 'https://komuny.org/icons/rubrica.svg'
       preset:
-        endpoint: 'Komuny AI Gateway'
-        model: 'zai/glm-4.7-flash'
+        endpoint: 'anthropic'
+        model: 'claude-haiku-4-5-20251001'
         temperature: 0.5
+        maxOutputTokens: 4096
         promptPrefix: |
           Eres un especialista en evaluacion educativa. Tu tarea es generar
           rubricas de evaluacion en formato tabla markdown.
@@ -185,15 +171,16 @@ modelSpecs:
           3. Tema o producto a evaluar
           4. Objetivo de aprendizaje
 
-    # 3. Planificador de Clases
+    # 3. Planificador de Clases - Claude Haiku
     - name: 'planificador'
       label: 'Planificador de Clases'
       description: 'Diseña secuencias didacticas estructuradas'
       iconURL: 'https://komuny.org/icons/planificador.svg'
       preset:
-        endpoint: 'Komuny AI Gateway'
-        model: 'zai/glm-4.7-flash'
+        endpoint: 'anthropic'
+        model: 'claude-haiku-4-5-20251001'
         temperature: 0.6
+        maxOutputTokens: 4096
         promptPrefix: |
           Eres un especialista en diseño curricular. Generas planificaciones
           de clase estructuradas en markdown con la siguiente plantilla:
@@ -214,15 +201,16 @@ modelSpecs:
 
           Pregunta SIEMPRE primero: nivel, materia, duracion, tema, objetivo.
 
-    # 4. Simplificador de Textos
+    # 4. Simplificador de Textos - Claude Haiku
     - name: 'simplificador'
       label: 'Simplificador de Textos'
       description: 'Adapta textos al nivel lector de tus estudiantes'
       iconURL: 'https://komuny.org/icons/simplificador.svg'
       preset:
-        endpoint: 'Komuny AI Gateway'
-        model: 'zai/glm-4.7-flash'
+        endpoint: 'anthropic'
+        model: 'claude-haiku-4-5-20251001'
         temperature: 0.4
+        maxOutputTokens: 4096
         promptPrefix: |
           Eres especialista en lectura comprensiva y accesibilidad cognitiva.
           Tu tarea es simplificar textos manteniendo:
@@ -240,15 +228,16 @@ modelSpecs:
           - Lista de palabras clave (con definicion breve si nivel <12 años)
           - 3 preguntas de comprension al final
 
-    # 5. Detector de Sesgos
+    # 5. Detector de Sesgos - Claude Sonnet (mejor razonamiento)
     - name: 'detector-sesgos'
       label: 'Detector de Sesgos'
       description: 'Analiza materiales en busca de sesgos involuntarios'
       iconURL: 'https://komuny.org/icons/sesgos.svg'
       preset:
-        endpoint: 'Komuny AI Gateway'
-        model: 'anthropic/claude-sonnet-4-6'
+        endpoint: 'anthropic'
+        model: 'claude-sonnet-4-6'
         temperature: 0.3
+        maxOutputTokens: 8192
         promptPrefix: |
           Eres un especialista en pedagogia critica y diversidad. Tu tarea
           es analizar materiales educativos para identificar sesgos involuntarios.
@@ -269,15 +258,16 @@ modelSpecs:
           Sé respetuoso y constructivo. Reconoce que muchos sesgos son
           culturales y no intencionales.
 
-    # 6. Banco de Preguntas Bloom
+    # 6. Banco de Preguntas Bloom - Claude Haiku
     - name: 'preguntas-bloom'
       label: 'Banco de Preguntas Bloom'
       description: 'Genera preguntas en los 6 niveles de Bloom'
       iconURL: 'https://komuny.org/icons/preguntas.svg'
       preset:
-        endpoint: 'Komuny AI Gateway'
-        model: 'zai/glm-4.7-flash'
+        endpoint: 'anthropic'
+        model: 'claude-haiku-4-5-20251001'
         temperature: 0.5
+        maxOutputTokens: 4096
         promptPrefix: |
           Eres un especialista en evaluacion segun la taxonomia de Bloom revisada.
           Generas preguntas distribuidas en los 6 niveles cognitivos:
