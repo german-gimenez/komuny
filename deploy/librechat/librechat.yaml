@@ -1,0 +1,340 @@
+# =====================================================================
+# Komuny Chat - LibreChat config para educadores LATAM
+# =====================================================================
+# Despliegue: chat.komuny.org (Railway)
+# Doc oficial: https://www.librechat.ai/docs/configuration/librechat_yaml
+# Repo: https://github.com/german-gimenez/komuny (deploy/librechat/)
+# =====================================================================
+
+version: 1.3.10
+cache: true
+
+# ----------------------------------------------------------------------
+# Interface - branding y funcionalidades para docentes
+# ----------------------------------------------------------------------
+interface:
+  customWelcome: |
+    Bienvenido a Komuny Chat — tu asistente IA para educacion.
+
+    Estamos para acompañarte planificando clases, diseñando rubricas,
+    simplificando textos, detectando sesgos en tus materiales y generando
+    preguntas de Bloom. Selecciona un preset desde el selector de modelos
+    o escribe tu consulta libremente.
+
+    Komuny Edu — Napsix.AI
+  fileSearch: true
+  modelSelect: true
+  parameters: true
+  presets: true
+  prompts:
+    use: true
+    create: true
+    share: true
+    public: false
+  bookmarks: true
+  multiConvo: true
+  agents:
+    use: true
+    create: true
+    share: true
+    public: false
+  peoplePicker:
+    users: true
+    groups: true
+    roles: true
+  marketplace:
+    use: false
+  fileCitations: true
+
+  privacyPolicy:
+    externalUrl: 'https://komuny.org/privacidad'
+    openNewTab: true
+
+  termsOfService:
+    externalUrl: 'https://komuny.org/terminos'
+    openNewTab: true
+    modalAcceptance: true
+    modalTitle: 'Terminos de uso de Komuny Chat'
+    modalContent: |
+      # Terminos y Condiciones — Komuny Chat
+
+      Bienvenido a Komuny Chat, plataforma educativa de Napsix.AI.
+
+      ## 1. Uso educativo
+      Komuny Chat esta diseñado para apoyar tareas pedagogicas: planificacion,
+      evaluacion, adaptacion de contenidos y comunicacion con familias. No
+      reemplaza el criterio profesional del docente.
+
+      ## 2. Privacidad de estudiantes
+      No ingreses datos personales de estudiantes (nombres, DNI, calificaciones
+      identificadas). Usa siempre informacion anonimizada.
+
+      ## 3. Verificacion de contenido
+      Las respuestas IA pueden contener errores. Siempre verifica la informacion
+      antes de usarla en clase o compartirla con familias.
+
+      ## 4. Codigo abierto
+      Komuny Chat usa LibreChat (MIT) y se aloja en infraestructura propia de
+      Napsix.AI. Codigo y recursos disponibles en github.com/german-gimenez/komuny
+
+      ## 5. Contacto
+      Dudas o reportes: hola@komuny.org
+
+# ----------------------------------------------------------------------
+# Registration - permitir registro con email + Google OAuth
+# ----------------------------------------------------------------------
+registration:
+  socialLogins: ['google']
+  # Descomentar para limitar a dominios de instituciones educativas:
+  # allowedDomains:
+  #   - 'gmail.com'
+
+# ----------------------------------------------------------------------
+# Rate limits - prevenir abuso de APIs costosas
+# ----------------------------------------------------------------------
+rateLimits:
+  fileUploads:
+    ipMax: 50
+    ipWindowInMinutes: 60
+    userMax: 25
+    userWindowInMinutes: 60
+  conversationsImport:
+    ipMax: 30
+    ipWindowInMinutes: 60
+    userMax: 15
+    userWindowInMinutes: 60
+
+# ----------------------------------------------------------------------
+# Endpoints - modelos disponibles para educadores
+# ----------------------------------------------------------------------
+endpoints:
+  agents:
+    recursionLimit: 25
+    maxRecursionLimit: 50
+    disableBuilder: false
+    capabilities: ['execute_code', 'file_search', 'actions', 'tools']
+
+  # Endpoint custom apuntando a Vercel AI Gateway
+  # (reusa el zai/glm-4.7-flash que ya pagas en Komuny)
+  custom:
+    - name: 'Komuny AI Gateway'
+      apiKey: '${VERCEL_AI_GATEWAY_KEY}'
+      baseURL: 'https://ai-gateway.vercel.sh/v1'
+      models:
+        default:
+          - 'zai/glm-4.7-flash'
+          - 'anthropic/claude-sonnet-4-6'
+          - 'openai/gpt-5-mini'
+          - 'openai/gpt-5'
+        fetch: false
+      titleConvo: true
+      titleModel: 'zai/glm-4.7-flash'
+      modelDisplayLabel: 'Komuny AI'
+      iconURL: 'https://komuny.org/logo.svg'
+
+# ----------------------------------------------------------------------
+# Model Specs - 5 presets de docente alineados a herramientas Komuny
+# ----------------------------------------------------------------------
+modelSpecs:
+  list:
+    # 1. Asistente general Komuny (default)
+    - name: 'komuny-asistente'
+      label: 'Asistente Komuny'
+      description: 'Tu asistente IA pedagogico generalista en español'
+      default: true
+      iconURL: 'https://komuny.org/icons/komia.svg'
+      preset:
+        endpoint: 'Komuny AI Gateway'
+        model: 'zai/glm-4.7-flash'
+        temperature: 0.7
+        promptPrefix: |
+          Eres KomIA, asistente IA pedagogico de Komuny Edu para educadores
+          de America Latina. Respondes siempre en español neutro LATAM,
+          con tono calido, profesional y respetuoso de la diversidad cultural.
+
+          Tu rol:
+          - Apoyar al docente en planificacion, evaluacion, adaptacion y comunicacion
+          - Sugerir recursos abiertos cuando sea pertinente
+          - Recordar buenas practicas: anonimizar datos de estudiantes,
+            verificar contenido IA antes de usarlo en clase
+          - Citar fuentes si haces afirmaciones factuales
+
+    # 2. Generador de Rubrica
+    - name: 'rubrica'
+      label: 'Generador de Rubrica'
+      description: 'Crea rubricas de evaluacion claras y alineadas a objetivos'
+      iconURL: 'https://komuny.org/icons/rubrica.svg'
+      preset:
+        endpoint: 'Komuny AI Gateway'
+        model: 'zai/glm-4.7-flash'
+        temperature: 0.5
+        promptPrefix: |
+          Eres un especialista en evaluacion educativa. Tu tarea es generar
+          rubricas de evaluacion en formato tabla markdown.
+
+          Estructura obligatoria:
+          - Criterios claros (3-5 dimensiones)
+          - Niveles de desempeño (Inicial / En desarrollo / Logrado / Destacado)
+          - Descriptores observables por nivel
+          - Alineacion explicita con un objetivo de aprendizaje
+
+          Tono: profesional, conciso, sin jerga innecesaria.
+          Pregunta SIEMPRE primero:
+          1. Nivel educativo
+          2. Materia/area
+          3. Tema o producto a evaluar
+          4. Objetivo de aprendizaje
+
+    # 3. Planificador de Clases
+    - name: 'planificador'
+      label: 'Planificador de Clases'
+      description: 'Diseña secuencias didacticas estructuradas'
+      iconURL: 'https://komuny.org/icons/planificador.svg'
+      preset:
+        endpoint: 'Komuny AI Gateway'
+        model: 'zai/glm-4.7-flash'
+        temperature: 0.6
+        promptPrefix: |
+          Eres un especialista en diseño curricular. Generas planificaciones
+          de clase estructuradas en markdown con la siguiente plantilla:
+
+          # Titulo de la clase
+          - Nivel y materia
+          - Duracion estimada
+          - Objetivos de aprendizaje (verbos observables)
+          - Saberes previos requeridos
+
+          ## Momento 1 - Inicio (10-15 min)
+          ## Momento 2 - Desarrollo (20-30 min)
+          ## Momento 3 - Cierre (10-15 min)
+
+          ## Recursos
+          ## Evaluacion formativa
+          ## Adaptaciones para diversidad
+
+          Pregunta SIEMPRE primero: nivel, materia, duracion, tema, objetivo.
+
+    # 4. Simplificador de Textos
+    - name: 'simplificador'
+      label: 'Simplificador de Textos'
+      description: 'Adapta textos al nivel lector de tus estudiantes'
+      iconURL: 'https://komuny.org/icons/simplificador.svg'
+      preset:
+        endpoint: 'Komuny AI Gateway'
+        model: 'zai/glm-4.7-flash'
+        temperature: 0.4
+        promptPrefix: |
+          Eres especialista en lectura comprensiva y accesibilidad cognitiva.
+          Tu tarea es simplificar textos manteniendo:
+          - El sentido original
+          - Las ideas clave
+          - Vocabulario apropiado al nivel solicitado
+
+          Pregunta SIEMPRE:
+          1. Edad o nivel lector destinatario
+          2. Si el resultado es para leer solo o con apoyo docente
+          3. Si necesita glosario de terminos al final
+
+          Entrega:
+          - Texto simplificado
+          - Lista de palabras clave (con definicion breve si nivel <12 años)
+          - 3 preguntas de comprension al final
+
+    # 5. Detector de Sesgos
+    - name: 'detector-sesgos'
+      label: 'Detector de Sesgos'
+      description: 'Analiza materiales en busca de sesgos involuntarios'
+      iconURL: 'https://komuny.org/icons/sesgos.svg'
+      preset:
+        endpoint: 'Komuny AI Gateway'
+        model: 'anthropic/claude-sonnet-4-6'
+        temperature: 0.3
+        promptPrefix: |
+          Eres un especialista en pedagogia critica y diversidad. Tu tarea
+          es analizar materiales educativos para identificar sesgos involuntarios.
+
+          Categorias a revisar:
+          - Genero (lenguaje, representacion, roles)
+          - Cultural/regional (sesgo eurocentrico, urbano-rural)
+          - Socioeconomico (asumir contexto del estudiante)
+          - Capacidades (capacitismo)
+          - Etario (adultocentrismo)
+
+          Formato de respuesta:
+          1. Resumen ejecutivo (3 lineas)
+          2. Sesgos detectados (tabla: categoria | fragmento | propuesta de mejora)
+          3. Texto reescrito sugerido
+          4. Recomendaciones para futuras producciones
+
+          Sé respetuoso y constructivo. Reconoce que muchos sesgos son
+          culturales y no intencionales.
+
+    # 6. Banco de Preguntas Bloom
+    - name: 'preguntas-bloom'
+      label: 'Banco de Preguntas Bloom'
+      description: 'Genera preguntas en los 6 niveles de Bloom'
+      iconURL: 'https://komuny.org/icons/preguntas.svg'
+      preset:
+        endpoint: 'Komuny AI Gateway'
+        model: 'zai/glm-4.7-flash'
+        temperature: 0.5
+        promptPrefix: |
+          Eres un especialista en evaluacion segun la taxonomia de Bloom revisada.
+          Generas preguntas distribuidas en los 6 niveles cognitivos:
+
+          1. Recordar (definir, listar, identificar)
+          2. Comprender (explicar, ejemplificar, resumir)
+          3. Aplicar (usar, implementar, ejecutar)
+          4. Analizar (diferenciar, organizar, atribuir)
+          5. Evaluar (verificar, criticar, juzgar)
+          6. Crear (generar, planificar, producir)
+
+          Pregunta SIEMPRE primero:
+          1. Tema/contenido
+          2. Nivel educativo
+          3. Cantidad por nivel (sugerencia: 3 por nivel = 18 total)
+
+          Formato: tabla markdown con columnas: Nivel | Verbo | Pregunta | Tiempo estimado
+
+# ----------------------------------------------------------------------
+# File config - limites de carga
+# ----------------------------------------------------------------------
+fileConfig:
+  endpoints:
+    default:
+      fileLimit: 10
+      fileSizeLimit: 20    # MB por archivo
+      totalSizeLimit: 100  # MB total por request
+      supportedMimeTypes:
+        - 'image/.*'
+        - 'application/pdf'
+        - 'text/.*'
+        - 'application/vnd.openxmlformats-officedocument.*'
+  serverFileSizeLimit: 100
+  avatarSizeLimit: 2
+
+# ----------------------------------------------------------------------
+# Web Search - opcional (configurar si quieres busqueda web)
+# ----------------------------------------------------------------------
+# webSearch:
+#   searchProvider: tavily
+#   scraperProvider: tavily
+#   tavilyApiKey: '${TAVILY_API_KEY}'
+#   tavilySearchOptions:
+#     searchDepth: basic
+#     maxResults: 5
+
+# ----------------------------------------------------------------------
+# Memory - personalizacion por docente
+# ----------------------------------------------------------------------
+memory:
+  disabled: false
+  validKeys:
+    - 'nivel_educativo'      # primaria, secundaria, etc.
+    - 'materias'             # array de materias que enseña
+    - 'pais'                 # AR, MX, CO, etc.
+    - 'preferencias'         # estilo de respuesta, idioma
+    - 'institucion'
+    - 'contexto'
+  tokenLimit: 10000
+  personalize: true
