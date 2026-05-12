@@ -3,10 +3,11 @@
 // =====================================================================
 // chat.komuny.org -> librechat-production-e10b.up.railway.app
 //
-// Funciones del Worker:
+// Funciones:
 // 1. Reverse proxy hacia Railway con override del Host header
 // 2. Inyecta español como idioma default (localStorage i18nextLng=es)
 // 3. Inyecta tutorial inicial (modal overlay en primer login)
+// 4. Reemplaza el logo de LibreChat con el de Komuny en login/header
 //
 // Deploy: PUT /accounts/{id}/workers/scripts/komuny-chat-proxy
 // =====================================================================
@@ -14,9 +15,28 @@
 const BACKEND_HOST = 'librechat-production-e10b.up.railway.app';
 const DEFAULT_LANG = 'es';
 
-// Script que se inyecta en el HTML antes del React mount.
-// 1. Setea español como idioma default
-// 2. Cuando React monto y user esta logueado por primera vez, muestra tutorial
+// Logo de Komuny servido desde komuny.org
+const KOMUNY_LOGO_URL = 'https://www.komuny.org/icons/icon-512x512.png';
+const KOMUNY_FAVICON_32_URL = 'https://www.komuny.org/favicon-32x32.png';
+const KOMUNY_FAVICON_16_URL = 'https://www.komuny.org/favicon-16x16.png';
+const KOMUNY_APPLE_TOUCH_URL = 'https://www.komuny.org/apple-touch-icon.png';
+const KOMUNY_MASKABLE_URL = 'https://www.komuny.org/icons/icon-maskable-512x512.png';
+
+// Mapping de paths que deben ser reemplazados por el logo de Komuny
+const LOGO_PATH_MAP = {
+  '/assets/logo.svg': KOMUNY_LOGO_URL,
+  '/assets/favicon-32x32.png': KOMUNY_FAVICON_32_URL,
+  '/assets/favicon-16x16.png': KOMUNY_FAVICON_16_URL,
+  '/assets/apple-touch-icon-180x180.png': KOMUNY_APPLE_TOUCH_URL,
+  '/assets/apple-touch-icon.png': KOMUNY_APPLE_TOUCH_URL,
+  '/assets/maskable-icon.png': KOMUNY_MASKABLE_URL,
+  '/favicon.ico': KOMUNY_FAVICON_32_URL,
+  '/favicon-32x32.png': KOMUNY_FAVICON_32_URL,
+  '/favicon-16x16.png': KOMUNY_FAVICON_16_URL,
+  '/apple-touch-icon.png': KOMUNY_APPLE_TOUCH_URL,
+};
+
+// Script bootstrap: idioma español + tutorial inicial
 const KOMUNY_BOOTSTRAP_SCRIPT = `<script>
 (function() {
   try {
@@ -29,7 +49,6 @@ const KOMUNY_BOOTSTRAP_SCRIPT = `<script>
     // 2. Tutorial inicial - se muestra una sola vez al primer login
     function shouldShowTutorial() {
       if (localStorage.getItem('komuny_tutorial_done')) return false;
-      // Solo si el user esta logueado (LibreChat setea 'token' cuando hay sesion)
       const hasToken = Object.keys(localStorage).some(k => k.includes('token'));
       return hasToken;
     }
@@ -192,7 +211,6 @@ const KOMUNY_BOOTSTRAP_SCRIPT = `<script>
       renderStep();
     }
 
-    // Esperar a que React monte y user este logueado
     function waitForLogin() {
       let attempts = 0;
       const interval = setInterval(() => {
@@ -201,7 +219,6 @@ const KOMUNY_BOOTSTRAP_SCRIPT = `<script>
           clearInterval(interval);
           setTimeout(showKomunyTutorial, 800);
         } else if (attempts > 60) {
-          // Dar up despues de 60s
           clearInterval(interval);
         }
       }, 1000);
@@ -230,9 +247,40 @@ class HtmlLangSetter {
   }
 }
 
+// Reemplaza el src del logo en el HTML
+class LogoRewriter {
+  element(element) {
+    const src = element.getAttribute('src');
+    if (src && LOGO_PATH_MAP[src]) {
+      element.setAttribute('src', LOGO_PATH_MAP[src]);
+    }
+  }
+}
+
 export default {
   async fetch(request) {
     const url = new URL(request.url);
+    const pathname = url.pathname;
+
+    // Interceptar requests al logo y favicons - servir desde komuny.org
+    if (LOGO_PATH_MAP[pathname]) {
+      const komunyAssetUrl = LOGO_PATH_MAP[pathname];
+      const assetResponse = await fetch(komunyAssetUrl, {
+        cf: { cacheTtl: 86400, cacheEverything: true },
+      });
+
+      // Devolver con cache headers correctos
+      return new Response(assetResponse.body, {
+        status: assetResponse.status,
+        headers: {
+          'Content-Type': assetResponse.headers.get('content-type') || 'image/png',
+          'Cache-Control': 'public, max-age=86400',
+          'Access-Control-Allow-Origin': '*',
+        },
+      });
+    }
+
+    // Resto de requests: reverse proxy a Railway
     url.host = BACKEND_HOST;
 
     const proxyRequest = new Request(url.toString(), {
@@ -246,12 +294,16 @@ export default {
 
     const response = await fetch(proxyRequest);
 
-    // Solo transformar HTML del index para inyectar el bootstrap script
+    // Solo transformar HTML del index para inyectar bootstrap + reemplazar logo
     const contentType = response.headers.get('content-type') || '';
     if (contentType.includes('text/html')) {
       return new HTMLRewriter()
         .on('html', new HtmlLangSetter())
         .on('head', new LangInjector())
+        .on('img', new LogoRewriter())
+        .on('link[rel="icon"]', new LogoRewriter())
+        .on('link[rel="apple-touch-icon"]', new LogoRewriter())
+        .on('link[rel="shortcut icon"]', new LogoRewriter())
         .transform(response);
     }
 
