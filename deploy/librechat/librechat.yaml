@@ -76,31 +76,49 @@ interface:
     externalUrl: 'https://komuny.org/terminos'
     openNewTab: true
     modalAcceptance: true
-    modalTitle: 'Terminos de uso de Komuny Chat'
+    modalTitle: 'Terminos y Privacidad de Komuny Chat'
     modalContent: |
-      # Terminos y Condiciones — Komuny Chat
+      # Bienvenido a Komuny Chat
 
-      Bienvenido a Komuny Chat, plataforma educativa de Napsix.AI.
+      Antes de comenzar, conoce los puntos clave (terminos y privacidad completos en
+      [komuny.org/terminos](https://komuny.org/terminos) y [komuny.org/privacidad](https://komuny.org/privacidad)).
 
-      ## 1. Uso educativo
-      Komuny Chat esta diseñado para apoyar tareas pedagogicas: planificacion,
-      evaluacion, adaptacion de contenidos y comunicacion con familias. No
-      reemplaza el criterio profesional del docente.
+      ## Uso pedagogico responsable
+      Komuny Chat es una herramienta de apoyo para docentes, no un reemplazo de tu criterio profesional.
+      Siempre revisa y verifica las respuestas de la IA antes de usarlas en clase o compartirlas.
 
-      ## 2. Privacidad de estudiantes
-      No ingreses datos personales de estudiantes (nombres, DNI, calificaciones
-      identificadas). Usa siempre informacion anonimizada.
+      ## Privacidad de estudiantes (CRITICO)
+      **No ingreses datos personales identificables de estudiantes** (nombres, DNI, fotos, calificaciones con
+      identificacion, etc.). Usa contextos anonimos: "un estudiante de 12 años con dificultades de lectura..."
+      en lugar de "Juan Perez, DNI 12345678...".
 
-      ## 3. Verificacion de contenido
-      Las respuestas IA pueden contener errores. Siempre verifica la informacion
-      antes de usarla en clase o compartirla con familias.
+      Esta regla protege a menores y su incumplimiento puede causar suspension de la cuenta.
 
-      ## 4. Codigo abierto
-      Komuny Chat usa LibreChat (MIT) y se aloja en infraestructura propia de
-      Napsix.AI. Codigo y recursos disponibles en github.com/german-gimenez/komuny
+      ## Uso aceptable
+      Permitido: planificacion, evaluacion, comunicacion con familias, adaptacion de contenidos,
+      reflexion pedagogica, generacion de materiales educativos.
 
-      ## 5. Contacto
-      Dudas o reportes: hola@komuny.org
+      No permitido: contenido inapropiado, plagio academico, acoso, suplantacion, scraping, bots
+      sin autorizacion.
+
+      ## Datos que recolectamos
+      - Cuenta: nombre, email, contraseña (hasheada)
+      - Conversaciones (asociadas a tu cuenta, puedes eliminarlas)
+      - Memoria personalizada (pais, nivel, materias - solo si la configuras)
+
+      No vendemos tus datos. No los usamos para entrenar modelos de IA.
+
+      ## Modelos de IA
+      Komuny Chat usa Claude de Anthropic. Komuny paga el uso para que sea gratis para docentes.
+
+      ## Tus derechos
+      Acceso, rectificacion, supresion, portabilidad, oposicion, retiro de consentimiento.
+      Escribinos a hola@komuny.org para ejercerlos.
+
+      ## Contacto
+      Email: hola@komuny.org · Sitio: komuny.org
+
+      Al continuar, aceptas los terminos completos y la politica de privacidad.
 
 # ----------------------------------------------------------------------
 # Registration - permitir registro con email + Google OAuth
