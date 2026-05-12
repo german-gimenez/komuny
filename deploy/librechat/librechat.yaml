@@ -10,21 +10,35 @@ version: 1.3.10
 cache: true
 
 # ----------------------------------------------------------------------
-# Interface - branding y funcionalidades para docentes
+# Interface - branding y UX optimizado para docentes LATAM
 # ----------------------------------------------------------------------
 interface:
   customWelcome: |
-    Bienvenido a Komuny Chat — tu asistente IA para educacion.
+    ¡Hola, docente! Soy Komuny Chat, tu asistente IA pedagogico.
 
-    Estamos para acompañarte planificando clases, diseñando rubricas,
-    simplificando textos, detectando sesgos en tus materiales y generando
-    preguntas de Bloom. Selecciona un preset desde el selector de modelos
-    o escribe tu consulta libremente.
+    **¿Como empezar?**
+    - Elegi un asistente especializado en el selector de modelos (arriba)
+    - O escribime libremente tu consulta en español
 
-    Komuny Edu — Napsix.AI
+    **Tengo 6 asistentes para vos:**
+    1. **Asistente Komuny** - consultas pedagogicas generales
+    2. **Generador de Rubricas** - evaluacion estructurada
+    3. **Planificador de Clases** - secuencias didacticas
+    4. **Simplificador de Textos** - adaptar para diferentes niveles lectores
+    5. **Detector de Sesgos** - revisar materiales con perspectiva critica
+    6. **Banco de Preguntas Bloom** - generar preguntas por nivel cognitivo
+
+    **Consejos rapidos:**
+    - No ingreses datos personales de estudiantes. Usa contextos anonimos
+    - Siempre revisa lo que genere la IA antes de usar en clase
+    - Mas recursos en komuny.org
+
+    Construido por Napsix.AI para educadores de LATAM.
+
+  # Funcionalidades UI - simplificadas para reducir curva de aprendizaje
   fileSearch: true
   modelSelect: true
-  parameters: true
+  parameters: false      # Ocultar params tecnicos (temperature, etc) a docentes
   presets: true
   prompts:
     use: true
@@ -32,16 +46,16 @@ interface:
     share: true
     public: false
   bookmarks: true
-  multiConvo: true
+  multiConvo: false      # Ocultar multi-conversacion (confunde a docentes nuevos)
   agents:
     use: true
-    create: true
-    share: true
+    create: false        # Solo admin crea agents, docentes los usan
+    share: false
     public: false
   peoplePicker:
-    users: true
-    groups: true
-    roles: true
+    users: false         # Sin people picker hasta que tengamos grupos
+    groups: false
+    roles: false
   marketplace:
     use: false
   fileCitations: true
