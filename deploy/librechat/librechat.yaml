@@ -13,6 +13,9 @@ cache: true
 # Interface - branding y UX optimizado para docentes LATAM
 # ----------------------------------------------------------------------
 interface:
+  # Help & FAQ apunta a Komuny en lugar de LibreChat
+  helpAndFaqURL: 'https://komuny.org/fundacion'
+
   customWelcome: |
     ¡Hola, docente! Soy Komuny Chat, tu asistente IA pedagogico.
 
