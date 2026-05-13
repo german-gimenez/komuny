@@ -175,6 +175,7 @@ modelSpecs:
       preset:
         endpoint: 'anthropic'
         model: 'claude-haiku-4-5-20251001'
+        thinking: false
         temperature: 0.7
         maxOutputTokens: 4096
         promptPrefix: |
@@ -210,6 +211,7 @@ modelSpecs:
       preset:
         endpoint: 'anthropic'
         model: 'claude-haiku-4-5-20251001'
+        thinking: false
         temperature: 0.5
         maxOutputTokens: 4096
         promptPrefix: |
@@ -237,6 +239,7 @@ modelSpecs:
       preset:
         endpoint: 'anthropic'
         model: 'claude-haiku-4-5-20251001'
+        thinking: false
         temperature: 0.6
         maxOutputTokens: 4096
         promptPrefix: |
@@ -267,6 +270,7 @@ modelSpecs:
       preset:
         endpoint: 'anthropic'
         model: 'claude-haiku-4-5-20251001'
+        thinking: false
         temperature: 0.4
         maxOutputTokens: 4096
         promptPrefix: |
@@ -294,6 +298,7 @@ modelSpecs:
       preset:
         endpoint: 'anthropic'
         model: 'claude-sonnet-4-6'
+        thinking: false
         temperature: 0.3
         maxOutputTokens: 8192
         promptPrefix: |
@@ -324,6 +329,7 @@ modelSpecs:
       preset:
         endpoint: 'anthropic'
         model: 'claude-haiku-4-5-20251001'
+        thinking: false
         temperature: 0.5
         maxOutputTokens: 4096
         promptPrefix: |
