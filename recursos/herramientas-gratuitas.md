@@ -1,11 +1,11 @@
-# 🛠️ Herramientas y Recursos Gratuitos para Docentes
+﻿# ðŸ› ï¸ Herramientas y Recursos Gratuitos para Docentes
 
-> Komuny Edu — Directorio curado de recursos de IA para educadores latinoamericanos
+> Komuny Edu "” Directorio curado de recursos de IA para educadores latinoamericanos
 > Todos los recursos tienen acceso gratuito o descuento para docentes verificados.
 
 ---
 
-## 🤖 Asistentes de IA — Acceso Gratuito
+## ðŸ¤– Asistentes de IA "” Acceso Gratuito
 
 | Herramienta | Empresa | Para que sirve | Enlace |
 |------------|---------|----------------|--------|
@@ -18,24 +18,24 @@
 
 ---
 
-## 🎓 Formacion y Certificaciones — Gratuitas
+## ðŸŽ“ Formacion y Certificaciones "” Gratuitas
 
 ### Anthropic
-- **[Anthropic Academy](https://www.anthropic.com/learn)** — AI Fluency for Educators, etica de la IA
+- **[Anthropic Academy](https://www.anthropic.com/learn)** "” AI Fluency for Educators, etica de la IA
 
 ### Google
-- **[Google AI Educator Series](https://edu.google.com/learning-center/google-ai-educator-series/)** — K-12 con Gemini y NotebookLM
-- **[Crece con Google](https://grow.google/intl/es/)** — Fundamentos de Prompting, Fundamentos de IA
+- **[Google AI Educator Series](https://edu.google.com/learning-center/google-ai-educator-series/)** "” K-12 con Gemini y NotebookLM
+- **[Crece con Google](https://grow.google/intl/es/)** "” Fundamentos de Prompting, Fundamentos de IA
 
 ### Microsoft
-- **[Microsoft Learn](https://learn.microsoft.com/es-es/training/educator-center/)** — Certificacion MCE, rutas por nivel
+- **[Microsoft Learn](https://learn.microsoft.com/es-es/training/educator-center/)** "” Certificacion MCE, rutas por nivel
 
 ### OpenAI
-- **[OpenAI Academy](https://academy.openai.com)** — Talleres, videos, foros y certificaciones
+- **[OpenAI Academy](https://academy.openai.com)** "” Talleres, videos, foros y certificaciones
 
 ---
 
-## 💰 Herramientas con Plan Gratuito para Docentes
+## ðŸ’° Herramientas con Plan Gratuito para Docentes
 
 | Herramienta | Descuento | Verificacion | Enlace |
 |------------|-----------|-------------|--------|
@@ -49,27 +49,27 @@
 
 ---
 
-## 🌐 Portales Regionales en Espanol
+## ðŸŒ Portales Regionales en Espanol
 
-### Argentina — Educ.ar
+### Argentina "” Educ.ar
 Manual de IA para Docentes, actividades y podcast.
-→ [educ.ar](https://www.educ.ar)
+â†’ [educ.ar](https://www.educ.ar)
 
-### Espana — INTEF / CEDEC
+### Espana "” INTEF / CEDEC
 REAs de IA para primaria y secundaria, Procomun, Codigo INTEF.
-→ [cedec.intef.es](https://cedec.intef.es/rea-inteligencia-artificial-en-educacion-para-docentes/)
+â†’ [cedec.intef.es](https://cedec.intef.es/rea-inteligencia-artificial-en-educacion-para-docentes/)
 
-### Chile — Educarchile
+### Chile "” Educarchile
 Gestion escolar con IA, TPACK, kit IActivistas.
-→ [educarchile.cl](https://www.educarchile.cl)
+â†’ [educarchile.cl](https://www.educarchile.cl)
 
-### Mexico — Coeducar
+### Mexico "” Coeducar
 IA con Nueva Escuela Mexicana, DUA y proyectos sociocriticos.
-→ [coeducar.mx](https://www.coeducar.mx)
+â†’ [coeducar.mx](https://www.coeducar.mx)
 
 ---
 
-## 🔓 Repositorios Open Source Recomendados
+## ðŸ”“ Repositorios Open Source Recomendados
 
 | Proyecto | Descripcion | Enlace |
 |---------|-------------|--------|
@@ -79,7 +79,7 @@ IA con Nueva Escuela Mexicana, DUA y proyectos sociocriticos.
 
 ---
 
-## 🧩 Estructura de un Prompt Efectivo
+## ðŸ§© Estructura de un Prompt Efectivo
 
 ```
 ROL:         "Actua como profesor de quimica con experiencia en bachillerato"
@@ -91,5 +91,5 @@ RESTRICCION: "Sin laboratorio, solo materiales disponibles en el aula"
 
 ---
 
-*Actualizado desde el ecosistema global de IA educativa — investigacion por [Napsix.AI](https://napsix.ai)*
-*Contribuye en [GitHub](https://github.com/german-gimenez/komuny) — Komuny Edu*
+*Actualizado desde el ecosistema global de IA educativa "” investigacion por [Napsix.AI](https://napsix.ai/komuny)*
+*Contribuye en [GitHub](https://github.com/german-gimenez/komuny) "” Komuny Edu*

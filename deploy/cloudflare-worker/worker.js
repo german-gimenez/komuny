@@ -230,7 +230,7 @@ const KOMUNY_BOOTSTRAP_SCRIPT = `<script>
       \`;
       const steps = [
         { title: 'Bienvenido a Komuny Chat',
-          body: '<p>Soy tu asistente IA pedagogico, construido por <strong>Napsix.AI</strong> para educadores de America Latina.</p><div class="kt-tip">Usa <strong>Claude (Anthropic)</strong>, pagado por Komuny.</div>' },
+          body: '<p>Soy tu asistente IA pedagogico, construido por <a href="https://napsix.ai/komuny" target="_blank" rel="noopener"><strong>Napsix.AI</strong></a> para educadores de America Latina.</p><div class="kt-tip">Usa <strong>Claude (Anthropic)</strong>, pagado por Komuny.</div>' },
         { title: '6 asistentes especializados',
           body: '<p>En el selector arriba tenes 6 asistentes ya configurados:</p><ul><li><strong>Asistente Komuny</strong></li><li><strong>Generador de Rubricas</strong></li><li><strong>Planificador de Clases</strong></li><li><strong>Simplificador de Textos</strong></li><li><strong>Detector de Sesgos</strong></li><li><strong>Banco de Preguntas Bloom</strong></li></ul>' },
         { title: 'Adaptacion regional',

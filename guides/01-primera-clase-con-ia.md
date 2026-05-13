@@ -1,4 +1,4 @@
-# Guia 1: Tu primera clase con IA en 30 minutos
+﻿# Guia 1: Tu primera clase con IA en 30 minutos
 
 **Nivel:** Principiante total
 **Tiempo de preparacion:** 30 minutos
@@ -87,4 +87,4 @@ Y un ejemplo de tarea opcional para casa.
 
 ---
 
-*Komuny Edu — Hecho con amor para docentes de America Latina — [Napsix.AI](https://napsix.ai)*
+*Komuny Edu "” Hecho con amor para docentes de America Latina "” [Napsix.AI](https://napsix.ai/komuny)*

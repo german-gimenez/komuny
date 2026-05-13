@@ -1,4 +1,4 @@
-# Guia 3: IA para comunicarte con familias
+﻿# Guia 3: IA para comunicarte con familias
 
 **Nivel:** Principiante
 **Tiempo:** 20 minutos
@@ -101,4 +101,4 @@ Saludos cordiales, [NOMBRE DOCENTE]"
 
 ---
 
-*Komuny Edu — Hecho con amor para docentes de America Latina — [Napsix.AI](https://napsix.ai)*
+*Komuny Edu "” Hecho con amor para docentes de America Latina "” [Napsix.AI](https://napsix.ai/komuny)*

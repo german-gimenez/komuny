@@ -1,4 +1,4 @@
-# Guia 5: Diseno de proyectos interdisciplinarios con IA
+﻿# Guia 5: Diseno de proyectos interdisciplinarios con IA
 
 **Nivel:** Intermedio - Avanzado
 **Tiempo:** 60-90 minutos para el diseno completo
@@ -121,4 +121,4 @@ es el unico que va a funcionar.
 
 ---
 
-*Komuny Edu — Hecho con amor para docentes de America Latina — [Napsix.AI](https://napsix.ai)*
+*Komuny Edu "” Hecho con amor para docentes de America Latina "” [Napsix.AI](https://napsix.ai/komuny)*

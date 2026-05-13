@@ -1,4 +1,4 @@
-# Guia 6: Como usar las Herramientas IA de Komuny Edu
+﻿# Guia 6: Como usar las Herramientas IA de Komuny Edu
 
 **Nivel:** Principiante
 **Tiempo:** 10 minutos para tu primera herramienta
@@ -145,4 +145,4 @@ o chatea con KomIA en el sitio web.
 
 ---
 
-*Komuny Edu — Hecho con amor para docentes de America Latina — [Napsix.AI](https://napsix.ai)*
+*Komuny Edu "” Hecho con amor para docentes de America Latina "” [Napsix.AI](https://napsix.ai/komuny)*

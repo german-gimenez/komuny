@@ -1,4 +1,4 @@
-# Guia 07 — Komuny Chat para docentes
+﻿# Guia 07 — Komuny Chat para docentes
 
 > **Komuny Chat** es la plataforma IA conversacional de Komuny Edu.
 > Construido con **Anthropic** (Claude Opus 4.6 y Sonnet 4.6),
@@ -218,4 +218,4 @@ Mas info: [komuny.org/para-fundaciones](https://komuny.org/para-fundaciones)
 ---
 
 *Komuny Chat — Hecho con [Anthropic](https://anthropic.com), desarrollado por
-[Napsix.AI](https://napsix.ai) para educadores y fundaciones de LATAM.*
+[Napsix.AI](https://napsix.ai/komuny) para educadores y fundaciones de LATAM.*

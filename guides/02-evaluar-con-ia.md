@@ -1,4 +1,4 @@
-# Guia 2: Como evaluar con IA sin perder el criterio docente
+﻿# Guia 2: Como evaluar con IA sin perder el criterio docente
 
 **Nivel:** Principiante - Intermedio
 **Tiempo:** 45 minutos para configurar tu sistema de evaluacion
@@ -108,4 +108,4 @@ Es una oportunidad pedagogica: mostrarles como funciona la IA en evaluacion.
 
 ---
 
-*Komuny Edu — Hecho con amor para docentes de America Latina — [Napsix.AI](https://napsix.ai)*
+*Komuny Edu "” Hecho con amor para docentes de America Latina "” [Napsix.AI](https://napsix.ai/komuny)*

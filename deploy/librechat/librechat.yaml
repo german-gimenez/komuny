@@ -44,7 +44,9 @@ interface:
     - Siempre revisa lo que genere la IA antes de usar en clase
     - Mas recursos en komuny.org
 
-    Construido por Napsix.AI para educadores de LATAM.
+    ---
+
+    🛠️ Built with [Anthropic](https://anthropic.com) · Desarrollado por [Napsix.AI ↗](https://napsix.ai/komuny) para educadores de LATAM.
 
   # Funcionalidades UI - simplificadas para reducir curva de aprendizaje
   fileSearch: true

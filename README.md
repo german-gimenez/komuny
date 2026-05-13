@@ -1,4 +1,4 @@
-# Komuny Edu
+﻿# Komuny Edu
 ### IA para Educadores y Fundaciones de LATAM -- Open Source
 
 > **La inteligencia artificial debe ser accesible para todos los docentes y fundaciones educativas**, no solo para quienes saben programar.
@@ -9,7 +9,7 @@
 [![Licencia MIT](https://img.shields.io/badge/Licencia-MIT-purple)](LICENSE)
 [![Idioma](https://img.shields.io/badge/Idioma-Espa%C3%B1ol-orange)](README.md)
 [![Contribuciones](https://img.shields.io/badge/Contribuciones-Bienvenidas-blue)](CONTRIBUTING.md)
-[![Hecho en LATAM](https://img.shields.io/badge/Hecho%20en-LATAM-red)](https://napsix.ai)
+[![Hecho en LATAM](https://img.shields.io/badge/Hecho%20en-LATAM-red)](https://napsix.ai/komuny)
 [![Fundacion](https://img.shields.io/badge/Fundaci%C3%B3n-Persona%20Jur%C3%ADdica-darkgreen)](fundacion/README.md)
 [![Senado Mendoza](https://img.shields.io/badge/Aval-Senado%20de%20Mendoza-blue)](fundacion/reconocimientos.md)
 
@@ -46,7 +46,7 @@ Ver [komuny.org/para-fundaciones](https://komuny.org/para-fundaciones) para impl
 pre-cargados, agentes, MCPs, memoria y artifacts.
 
 **Hecho con [Anthropic](https://anthropic.com)** (Claude Opus 4.6 + Sonnet 4.6),
-desarrollado por **[Napsix.AI](https://napsix.ai)**.
+desarrollado por **[Napsix.AI](https://napsix.ai/komuny)**.
 
 ### 6 presets incluidos
 1. **Asistente Komuny** (default) — pedagogico generalista en español
@@ -187,14 +187,14 @@ Ver [CONTRIBUTING.md](CONTRIBUTING.md) para mas detalles.
 
 ## Licencia
 
-MIT (c) [Napsix.AI](https://napsix.ai) -- Ver [LICENSE](LICENSE)
+MIT (c) [Napsix.AI](https://napsix.ai/komuny) -- Ver [LICENSE](LICENSE)
 
 ---
 
 ## Equipo
 
 Creado y mantenido por **German Gimenez**
-CTO & Co-Founder -- [Napsix.AI](https://napsix.ai)
+CTO & Co-Founder -- [Napsix.AI](https://napsix.ai/komuny)
 Mendoza, Argentina
 
 > Napsix.AI es una agencia de inteligencia artificial enfocada en la democratizacion del acceso a la IA en America Latina.
@@ -206,8 +206,8 @@ Mendoza, Argentina
 - **Komuny Chat:** [LibreChat](https://github.com/danny-avila/LibreChat) (open source) + [Anthropic Claude](https://anthropic.com)
 - **komuny.org:** Next.js 15 + React 19 + Framer Motion + Vercel
 - **Modelos IA:** Claude Opus 4.6 + Claude Sonnet 4.6 (Anthropic)
-- **Operacion:** [Napsix.AI](https://napsix.ai)
+- **Operacion:** [Napsix.AI](https://napsix.ai/komuny)
 
 ---
 
-*Hecho con [Anthropic](https://anthropic.com), desarrollado por [Napsix.AI](https://napsix.ai) -- Para docentes y fundaciones de America Latina -- komuny.org*
+*Hecho con [Anthropic](https://anthropic.com), desarrollado por [Napsix.AI](https://napsix.ai/komuny) -- Para docentes y fundaciones de America Latina -- komuny.org*

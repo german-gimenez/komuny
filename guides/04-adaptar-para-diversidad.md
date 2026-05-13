@@ -1,4 +1,4 @@
-# Guia 4: Adaptar contenidos para diversidad en el aula
+﻿# Guia 4: Adaptar contenidos para diversidad en el aula
 
 **Nivel:** Intermedio
 **Tiempo:** 30-40 minutos
@@ -114,4 +114,4 @@ Siempre revisa con la perspectiva de quien si conoce al alumno:
 
 ---
 
-*Komuny Edu — Hecho con amor para docentes de America Latina — [Napsix.AI](https://napsix.ai)*
+*Komuny Edu "” Hecho con amor para docentes de America Latina "” [Napsix.AI](https://napsix.ai/komuny)*

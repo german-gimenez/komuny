@@ -1,8 +1,8 @@
-# Komuny para Fundaciones
+﻿# Komuny para Fundaciones
 
 > **Llevamos Komuny Chat a tu fundacion**, sin que construyan desde cero.
 > Stack educativo open source para fundaciones de LATAM.
-> Hecho con [Anthropic](https://anthropic.com), desarrollado por [Napsix.AI](https://napsix.ai).
+> Hecho con [Anthropic](https://anthropic.com), desarrollado por [Napsix.AI](https://napsix.ai/komuny).
 
 Web: [komuny.org/para-fundaciones](https://komuny.org/para-fundaciones)
 
@@ -141,4 +141,4 @@ Te respondemos con una propuesta concreta en 48 horas.
 ---
 
 *Komuny para Fundaciones — Hecho con [Anthropic](https://anthropic.com),
-desarrollado por [Napsix.AI](https://napsix.ai).*
+desarrollado por [Napsix.AI](https://napsix.ai/komuny).*

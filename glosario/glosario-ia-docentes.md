@@ -1,5 +1,5 @@
-# 📚 Glosario de IA para Docentes — Edición Completa
-> **Komuny Edu** — Recursos de Inteligencia Artificial para educadores latinoamericanos
+﻿# ðŸ“š Glosario de IA para Docentes "” Edición Completa
+> **Komuny Edu** "” Recursos de Inteligencia Artificial para educadores latinoamericanos
 > Sin tecnicismos. Sin barreras. Solo aprendizaje.
 > *Actualizado con recursos del ecosistema global de IA educativa.*
 
@@ -231,8 +231,8 @@ La capacidad de una institucion o persona de mantener el control sobre sus datos
 
 **Temperatura (Temperature)**
 Un parametro que controla que tan "creativa" o "predecible" es la IA.
-- Temperatura alta → mas creativo y variado
-- Temperatura baja → mas preciso y consistente
+- Temperatura alta â†’ mas creativo y variado
+- Temperatura baja â†’ mas preciso y consistente
 *Uso docente:* Alta para brainstorming y creacion de actividades; baja para respuestas tecnicas precisas o evaluaciones.
 
 **Token**
@@ -276,18 +276,18 @@ Pedirle a la IA que haga algo sin darle ejemplos previos. Funciona bien para tar
 
 ---
 
-## 💡 Tips para docentes
+## ðŸ’¡ Tips para docentes
 
-1. **Verifica siempre** — La IA puede equivocarse (alucinaciones). Valida datos importantes.
-2. **Se especifico** — Mientras mas contexto des, mejores respuestas obtienes.
-3. **Itera** — Si la primera respuesta no es perfecta, ajusta el prompt.
-4. **Ensena con transparencia** — Muestrale a tus alumnos como usas la IA.
-5. **Cuida los datos** — No compartas informacion personal de tus alumnos con IAs externas.
-6. **Mantene el criterio humano** — La IA es una herramienta, vos sos el educador.
-7. **Explora lo gratuito** — Canva, Claude, Gemini y Khanmigo tienen planes sin costo para docentes.
+1. **Verifica siempre** "” La IA puede equivocarse (alucinaciones). Valida datos importantes.
+2. **Se especifico** "” Mientras mas contexto des, mejores respuestas obtienes.
+3. **Itera** "” Si la primera respuesta no es perfecta, ajusta el prompt.
+4. **Ensena con transparencia** "” Muestrale a tus alumnos como usas la IA.
+5. **Cuida los datos** "” No compartas informacion personal de tus alumnos con IAs externas.
+6. **Mantene el criterio humano** "” La IA es una herramienta, vos sos el educador.
+7. **Explora lo gratuito** "” Canva, Claude, Gemini y Khanmigo tienen planes sin costo para docentes.
 
 ---
 
 *Falto un termino? [Contribuye al glosario](https://github.com/german-gimenez/komuny/issues/new)*
 *Komuny Edu es un proyecto open source. [Ver en GitHub](https://github.com/german-gimenez/komuny)*
-*Hecho con amor para docentes de America Latina — [Napsix.AI](https://napsix.ai)*
+*Hecho con amor para docentes de America Latina "” [Napsix.AI](https://napsix.ai/komuny)*

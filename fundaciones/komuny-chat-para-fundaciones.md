@@ -1,4 +1,4 @@
-# Komuny Chat para Fundaciones — Propuesta detallada
+﻿# Komuny Chat para Fundaciones — Propuesta detallada
 
 > Documento operativo para fundaciones interesadas en implementar
 > Komuny Chat en su organizacion.
@@ -114,28 +114,28 @@ modelos Anthropic Claude Opus 4.6 + Sonnet 4.6, agentes, MCPs y memoria.
 ## Stack tecnico detallado
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                  USUARIO FINAL                       │
-│              chat.tu-fundacion.org                   │
-└─────────────────────┬───────────────────────────────┘
-                      │
-┌─────────────────────▼───────────────────────────────┐
-│         LibreChat (open source frontend)             │
-│         Branded con tu fundacion                     │
-│         Hosting: Vercel / Cloudflare / AWS           │
-└─────────┬───────────────────────────┬───────────────┘
-          │                           │
-┌─────────▼──────────┐    ┌──────────▼────────────┐
-│  PostgreSQL/Mongo  │    │  Anthropic API        │
-│  (en tu region)    │    │  Claude Opus / Sonnet │
-│  Conversaciones    │    │  Modelos seguros      │
-└────────────────────┘    └───────────────────────┘
-          │
-┌─────────▼────────────────────────────────────────────┐
-│  MCP Servers (extensiones modulares)                 │
-│  GitHub | Stripe | HuggingFace | MySQL | DeepWiki    │
-│  + tus propios MCPs custom                           │
-└──────────────────────────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚                  USUARIO FINAL                       â”‚
+â”‚              chat.tu-fundacion.org                   â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                      â”‚
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚         LibreChat (open source frontend)             â”‚
+â”‚         Branded con tu fundacion                     â”‚
+â”‚         Hosting: Vercel / Cloudflare / AWS           â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+          â”‚                           â”‚
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚  PostgreSQL/Mongo  â”‚    â”‚  Anthropic API        â”‚
+â”‚  (en tu region)    â”‚    â”‚  Claude Opus / Sonnet â”‚
+â”‚  Conversaciones    â”‚    â”‚  Modelos seguros      â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+          â”‚
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚  MCP Servers (extensiones modulares)                 â”‚
+â”‚  GitHub | Stripe | HuggingFace | MySQL | DeepWiki    â”‚
+â”‚  + tus propios MCPs custom                           â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ### Auth flow
@@ -242,4 +242,4 @@ disena en la fase de personalizacion.
 ---
 
 *Komuny Chat para Fundaciones — Hecho con [Anthropic](https://anthropic.com),
-desarrollado por [Napsix.AI](https://napsix.ai) para fundaciones de LATAM.*
+desarrollado por [Napsix.AI](https://napsix.ai/komuny) para fundaciones de LATAM.*
