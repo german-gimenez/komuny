@@ -61,15 +61,22 @@ const KOMUNY_BOOTSTRAP_SCRIPT = `<script>
 
     // ===== 2. CSS upfront para evitar FLASH del logo de LibreChat =====
     // Esto se inyecta ANTES de que React monte. Oculta cualquier img con
-    // src de "logo.svg" hasta que tenga data-komuny-replaced.
+    // 'logo.svg' o 'logo.png' en el src hasta que tenga data-komuny-replaced.
+    // Tambien aumenta el container del logo del login (de h-10=40px a h-20=80px)
+    // para que el logo Komuny con texto se vea bien.
     const css = \`
       img[src*="logo.svg"]:not([data-komuny-replaced]),
-      img[src*="/assets/logo"]:not([data-komuny-replaced]) {
+      img[src*="logo.png"]:not([data-komuny-replaced]) {
         opacity: 0 !important;
       }
       img[data-komuny-replaced="1"] {
         opacity: 1 !important;
-        transition: opacity 0.2s ease;
+        transition: opacity 0.3s ease;
+      }
+      /* Override Tailwind h-10 del container del logo del login para
+         dar espacio al logo Komuny con texto */
+      div.mt-6.h-10.w-full.bg-cover {
+        height: 80px !important;
       }
     \`;
     const styleEl = document.createElement('style');
@@ -86,25 +93,40 @@ const KOMUNY_BOOTSTRAP_SCRIPT = `<script>
     // ===== 3. Rebranding: reemplaza logos y textos de LibreChat =====
     const KOMUNY_LOGO = '/assets/komuny-logo.png';
 
-    // Reemplaza UNICAMENTE el <img src="/assets/logo.svg"> del login
-    // por el logo Komuny con texto. NO toca SVGs inline (causaba broken
-    // images en otros componentes).
+    // Reemplaza UNICAMENTE el <img src="assets/logo.svg"> del login
+    // (LibreChat usa path RELATIVO 'assets/logo.svg' sin slash inicial,
+    // resuelto via <base href="/" />).
+    // El logo Komuny con texto reemplaza al logo de LibreChat.
     function replaceLoginLogo() {
       const allImgs = document.querySelectorAll('img');
       allImgs.forEach(function(img) {
         if (img.getAttribute('data-komuny-replaced')) return;
+        // getAttribute devuelve la URL TAL CUAL en el HTML (puede ser
+        // relativa como 'assets/logo.svg').
         const src = img.getAttribute('src') || '';
-        // Solo reemplazar el logo grande del login (path '/assets/logo.svg')
-        if (/\\/assets\\/logo\\.svg/i.test(src) || /\\/assets\\/logo\\.png/i.test(src)) {
+        const alt = (img.getAttribute('alt') || '').toLowerCase();
+
+        // Matchear cualquier path que termine con logo.svg o logo.png
+        // (con o sin slash inicial)
+        const isLogo = /(^|\\/)logo\\.(svg|png)$/i.test(src) ||
+                       /logo\\.(svg|png)(\\?|$)/i.test(src) ||
+                       /librechat/i.test(alt) ||
+                       /komuny chat/i.test(alt);
+
+        if (isLogo) {
           img.src = KOMUNY_LOGO;
           img.alt = 'Komuny Chat';
-          // Logo con texto: aspect ratio ~3.4:1 horizontal, centrado
+          // Logo con texto: aspect ratio ~3.4:1 horizontal, centrado.
+          // El container parent (div.mt-6.h-10.w-full) tiene CSS override
+          // a height:80px (via styleEl arriba). Aplicamos object-contain
+          // y margin auto para centrar.
           img.style.cssText = [
-            'width: auto !important',
-            'max-width: 240px !important',
-            'height: auto !important',
+            'width: 100% !important',
+            'max-width: 280px !important',
+            'height: 100% !important',
             'max-height: 80px !important',
             'object-fit: contain !important',
+            'object-position: center !important',
             'display: block !important',
             'margin: 0 auto !important',
             'opacity: 1 !important',
@@ -295,6 +317,20 @@ class MetaDescriptionRewriter {
   }
 }
 
+// Fuerza cache-bust del favicon agregando ?v= a los <link rel=icon> y similares
+class FaviconCacheBuster {
+  element(element) {
+    const rel = (element.getAttribute('rel') || '').toLowerCase();
+    if (rel === 'icon' || rel === 'apple-touch-icon' || rel === 'shortcut icon') {
+      const href = element.getAttribute('href');
+      if (href && !href.includes('?v=')) {
+        const separator = href.includes('?') ? '&' : '?';
+        element.setAttribute('href', href + separator + 'v=' + LOGO_VERSION);
+      }
+    }
+  }
+}
+
 export default {
   async fetch(request) {
     const url = new URL(request.url);
@@ -338,6 +374,7 @@ export default {
         .on('html', new HtmlLangSetter())
         .on('title', new TitleRewriter())
         .on('meta', new MetaDescriptionRewriter())
+        .on('link', new FaviconCacheBuster())
         .on('head', new LangInjector())
         .transform(response);
     }
