@@ -16,11 +16,13 @@ const BACKEND_HOST = 'librechat-production-e10b.up.railway.app';
 const DEFAULT_LANG = 'es';
 
 // Logo de Komuny servido desde komuny.org
-const KOMUNY_LOGO_URL = 'https://www.komuny.org/icons/icon-512x512.png';
-const KOMUNY_FAVICON_32_URL = 'https://www.komuny.org/favicon-32x32.png';
-const KOMUNY_FAVICON_16_URL = 'https://www.komuny.org/favicon-16x16.png';
-const KOMUNY_APPLE_TOUCH_URL = 'https://www.komuny.org/apple-touch-icon.png';
-const KOMUNY_MASKABLE_URL = 'https://www.komuny.org/icons/icon-maskable-512x512.png';
+// LOGO_VERSION cambia cuando los assets se actualizan - fuerza cache bust en Cloudflare
+const LOGO_VERSION = 'v2-isologo-2026-05-12';
+const KOMUNY_LOGO_URL = `https://www.komuny.org/icons/icon-512x512.png?v=${LOGO_VERSION}`;
+const KOMUNY_FAVICON_32_URL = `https://www.komuny.org/favicon-32x32.png?v=${LOGO_VERSION}`;
+const KOMUNY_FAVICON_16_URL = `https://www.komuny.org/favicon-16x16.png?v=${LOGO_VERSION}`;
+const KOMUNY_APPLE_TOUCH_URL = `https://www.komuny.org/apple-touch-icon.png?v=${LOGO_VERSION}`;
+const KOMUNY_MASKABLE_URL = `https://www.komuny.org/icons/icon-maskable-512x512.png?v=${LOGO_VERSION}`;
 
 // Mapping de paths que deben ser reemplazados por el logo de Komuny
 const LOGO_PATH_MAP = {
@@ -265,17 +267,18 @@ export default {
     // Interceptar requests al logo y favicons - servir desde komuny.org
     if (LOGO_PATH_MAP[pathname]) {
       const komunyAssetUrl = LOGO_PATH_MAP[pathname];
+      // Cache corto (1 hora) para permitir actualizaciones rapidas del logo
       const assetResponse = await fetch(komunyAssetUrl, {
-        cf: { cacheTtl: 86400, cacheEverything: true },
+        cf: { cacheTtl: 3600, cacheEverything: true },
       });
 
-      // Devolver con cache headers correctos
       return new Response(assetResponse.body, {
         status: assetResponse.status,
         headers: {
           'Content-Type': assetResponse.headers.get('content-type') || 'image/png',
-          'Cache-Control': 'public, max-age=86400',
+          'Cache-Control': 'public, max-age=3600',
           'Access-Control-Allow-Origin': '*',
+          'X-Komuny-Logo-Version': LOGO_VERSION,
         },
       });
     }
