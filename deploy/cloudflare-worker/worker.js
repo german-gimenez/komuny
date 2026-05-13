@@ -59,63 +59,59 @@ const KOMUNY_BOOTSTRAP_SCRIPT = `<script>
     }
     document.documentElement.lang = '${DEFAULT_LANG}';
 
-    // ===== 2. Rebranding: reemplaza logos y textos de LibreChat =====
+    // ===== 2. CSS upfront para evitar FLASH del logo de LibreChat =====
+    // Esto se inyecta ANTES de que React monte. Oculta cualquier img con
+    // src de "logo.svg" hasta que tenga data-komuny-replaced.
+    const css = \`
+      img[src*="logo.svg"]:not([data-komuny-replaced]),
+      img[src*="/assets/logo"]:not([data-komuny-replaced]) {
+        opacity: 0 !important;
+      }
+      img[data-komuny-replaced="1"] {
+        opacity: 1 !important;
+        transition: opacity 0.2s ease;
+      }
+    \`;
+    const styleEl = document.createElement('style');
+    styleEl.setAttribute('data-komuny', 'rebrand');
+    styleEl.textContent = css;
+    if (document.head) {
+      document.head.appendChild(styleEl);
+    } else {
+      document.addEventListener('DOMContentLoaded', function() {
+        document.head.appendChild(styleEl);
+      });
+    }
+
+    // ===== 3. Rebranding: reemplaza logos y textos de LibreChat =====
     const KOMUNY_LOGO = '/assets/komuny-logo.png';
-    const KOMUNY_ISOLOGO = '/assets/komuny-isologo.png';
 
-    // Reemplaza el logo de LibreChat con imagen Komuny CON TEXTO
-    // LibreChat tipicamente usa <img src="/assets/logo.svg"> en el login.
-    // El Worker ya intercepta /assets/logo.svg sirviendo el isologo,
-    // pero queremos mostrar el logo CON TEXTO (komuny-logo-black-text)
-    // en el login y header, por lo que reemplazamos via JS.
+    // Reemplaza UNICAMENTE el <img src="/assets/logo.svg"> del login
+    // por el logo Komuny con texto. NO toca SVGs inline (causaba broken
+    // images en otros componentes).
     function replaceLoginLogo() {
-      let replaced = 0;
-
-      // 1. Reemplazar <img src="...logo.svg"> y similares por logo con texto
       const allImgs = document.querySelectorAll('img');
       allImgs.forEach(function(img) {
         if (img.getAttribute('data-komuny-replaced')) return;
         const src = img.getAttribute('src') || '';
-        if (/logo\\.svg|\\/assets\\/logo/i.test(src) ||
-            (img.alt && /librechat/i.test(img.alt))) {
+        // Solo reemplazar el logo grande del login (path '/assets/logo.svg')
+        if (/\\/assets\\/logo\\.svg/i.test(src) || /\\/assets\\/logo\\.png/i.test(src)) {
           img.src = KOMUNY_LOGO;
           img.alt = 'Komuny Chat';
-          // Ajustar para aspect ratio del logo con texto (~3.4:1)
-          img.style.objectFit = 'contain';
-          img.style.maxWidth = '280px';
-          img.style.height = 'auto';
+          // Logo con texto: aspect ratio ~3.4:1 horizontal, centrado
+          img.style.cssText = [
+            'width: auto !important',
+            'max-width: 240px !important',
+            'height: auto !important',
+            'max-height: 80px !important',
+            'object-fit: contain !important',
+            'display: block !important',
+            'margin: 0 auto !important',
+            'opacity: 1 !important',
+          ].join(';');
           img.setAttribute('data-komuny-replaced', '1');
-          replaced++;
         }
       });
-
-      // 2. SVGs grandes inline (algunos componentes los usan)
-      const allSvgs = document.querySelectorAll('svg');
-      allSvgs.forEach(function(svg) {
-        if (svg.getAttribute('data-komuny-replaced')) return;
-        const rect = svg.getBoundingClientRect();
-        // Solo SVGs medianos/grandes (logo del login mide 60-200px)
-        if (rect.width >= 50 && rect.width <= 250 && rect.height >= 50 && rect.height <= 250) {
-          const parent = svg.parentElement;
-          if (!parent) return;
-          // No reemplazar SVGs dentro de botones/links/elementos interactivos
-          if (parent.tagName === 'BUTTON' || parent.tagName === 'A') return;
-          if (parent.className && typeof parent.className === 'string' &&
-              /icon|button|btn/i.test(parent.className)) return;
-
-          const img = document.createElement('img');
-          img.src = KOMUNY_LOGO;
-          img.alt = 'Komuny Chat';
-          img.style.cssText =
-            'max-width: 280px; height: ' + rect.height + 'px; object-fit: contain; display: block;';
-          img.setAttribute('data-komuny-replaced', '1');
-          svg.style.display = 'none';
-          svg.parentNode.insertBefore(img, svg.nextSibling);
-          svg.setAttribute('data-komuny-replaced', '1');
-          replaced++;
-        }
-      });
-      return replaced;
     }
 
     // Reemplaza todo texto "LibreChat" por "Komuny Chat" en el DOM
