@@ -28,10 +28,13 @@ const KOMUNY_ISOLOGO_URL = `https://www.komuny.org/icons/icon-512x512.png?v=${LO
 // Logo completo Komuny con texto negro (para login screen)
 const KOMUNY_LOGO_BLACK_URL = `https://www.komuny.org/komuny-logo-black-text-transparent.png?v=${LOGO_VERSION}`;
 
-// Mapping de paths Railway -> assets Komuny
-// NO mapeamos /assets/logo.svg porque LibreChat NO lo sirve como archivo
-// (es SVG inline en React), y mapearlo causaba broken image (X roja)
+// Mapping de paths LibreChat -> assets Komuny
+// /assets/logo.svg ES un SVG real que sirve LibreChat (gota multicolor).
+// Lo reemplazamos por el isologo Komuny en PNG (1:1 aspect ratio).
+// El Content-Type sera image/png pero el browser respeta el header,
+// no la extension de la URL.
 const LOGO_PATH_MAP = {
+  '/assets/logo.svg': KOMUNY_ISOLOGO_URL,
   '/assets/favicon-32x32.png': KOMUNY_FAVICON_32_URL,
   '/assets/favicon-16x16.png': KOMUNY_FAVICON_16_URL,
   '/assets/apple-touch-icon-180x180.png': KOMUNY_APPLE_TOUCH_URL,
@@ -41,7 +44,7 @@ const LOGO_PATH_MAP = {
   '/favicon-32x32.png': KOMUNY_FAVICON_32_URL,
   '/favicon-16x16.png': KOMUNY_FAVICON_16_URL,
   '/apple-touch-icon.png': KOMUNY_APPLE_TOUCH_URL,
-  // Asset propio servido por el Worker para uso en injected scripts
+  // Assets propios servidos por el Worker para uso en injected scripts
   '/assets/komuny-logo.png': KOMUNY_LOGO_BLACK_URL,
   '/assets/komuny-isologo.png': KOMUNY_ISOLOGO_URL,
 };
@@ -60,31 +63,51 @@ const KOMUNY_BOOTSTRAP_SCRIPT = `<script>
     const KOMUNY_LOGO = '/assets/komuny-logo.png';
     const KOMUNY_ISOLOGO = '/assets/komuny-isologo.png';
 
-    // Reemplaza el SVG del logo del login con imagen Komuny
+    // Reemplaza el logo de LibreChat con imagen Komuny CON TEXTO
+    // LibreChat tipicamente usa <img src="/assets/logo.svg"> en el login.
+    // El Worker ya intercepta /assets/logo.svg sirviendo el isologo,
+    // pero queremos mostrar el logo CON TEXTO (komuny-logo-black-text)
+    // en el login y header, por lo que reemplazamos via JS.
     function replaceLoginLogo() {
-      // LibreChat renderiza un SVG grande como logo del login.
-      // Buscamos SVGs en el root del login screen (no en botones/iconos pequenos).
-      const allSvgs = document.querySelectorAll('svg');
       let replaced = 0;
 
-      allSvgs.forEach(function(svg) {
-        // Solo reemplazar SVGs grandes (logo del login mide ~60-200px)
-        const rect = svg.getBoundingClientRect();
-        if (rect.width >= 50 && rect.width <= 250 && rect.height >= 50 && rect.height <= 250) {
-          // Verificar que NO sea un icono dentro de un boton/control
-          const parent = svg.parentElement;
-          const grandparent = parent && parent.parentElement;
-          // Si el SVG esta en un boton, link, o tiene clase de icono, skipear
-          if (parent && (parent.tagName === 'BUTTON' || parent.tagName === 'A')) return;
-          if (parent && parent.className && typeof parent.className === 'string' && /icon|button|btn/i.test(parent.className)) return;
-          if (svg.getAttribute('data-komuny-replaced')) return;
+      // 1. Reemplazar <img src="...logo.svg"> y similares por logo con texto
+      const allImgs = document.querySelectorAll('img');
+      allImgs.forEach(function(img) {
+        if (img.getAttribute('data-komuny-replaced')) return;
+        const src = img.getAttribute('src') || '';
+        if (/logo\\.svg|\\/assets\\/logo/i.test(src) ||
+            (img.alt && /librechat/i.test(img.alt))) {
+          img.src = KOMUNY_LOGO;
+          img.alt = 'Komuny Chat';
+          // Ajustar para aspect ratio del logo con texto (~3.4:1)
+          img.style.objectFit = 'contain';
+          img.style.maxWidth = '280px';
+          img.style.height = 'auto';
+          img.setAttribute('data-komuny-replaced', '1');
+          replaced++;
+        }
+      });
 
-          // Reemplazar el SVG con un img Komuny
+      // 2. SVGs grandes inline (algunos componentes los usan)
+      const allSvgs = document.querySelectorAll('svg');
+      allSvgs.forEach(function(svg) {
+        if (svg.getAttribute('data-komuny-replaced')) return;
+        const rect = svg.getBoundingClientRect();
+        // Solo SVGs medianos/grandes (logo del login mide 60-200px)
+        if (rect.width >= 50 && rect.width <= 250 && rect.height >= 50 && rect.height <= 250) {
+          const parent = svg.parentElement;
+          if (!parent) return;
+          // No reemplazar SVGs dentro de botones/links/elementos interactivos
+          if (parent.tagName === 'BUTTON' || parent.tagName === 'A') return;
+          if (parent.className && typeof parent.className === 'string' &&
+              /icon|button|btn/i.test(parent.className)) return;
+
           const img = document.createElement('img');
           img.src = KOMUNY_LOGO;
           img.alt = 'Komuny Chat';
           img.style.cssText =
-            'width: auto; max-width: 280px; height: ' + rect.height + 'px; object-fit: contain; display: block;';
+            'max-width: 280px; height: ' + rect.height + 'px; object-fit: contain; display: block;';
           img.setAttribute('data-komuny-replaced', '1');
           svg.style.display = 'none';
           svg.parentNode.insertBefore(img, svg.nextSibling);
