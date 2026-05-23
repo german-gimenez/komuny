@@ -117,6 +117,7 @@ Seguimos el ecosistema y respondemos con recursos concretos.
 
 | Novedad | Contexto | Fecha |
 |---------|----------|-------|
+| [Zero to Claude Code: de usuario de IA a creador con IA](novedades/2026-05-zero-a-claude-code.md) | Curso gratuito en espanol: 147 lecciones interactivas para aprender terminal, Git y programacion con IA desde cero | Mayo 2026 |
 | [El sistema educativo no esta en crisis — esta cumpliendo para lo que fue disenado](novedades/2026-05-reinvencion-educativa.md) | Respuesta a nota de Facundo Vazquez — reinvencion del modelo educativo industrial | Mayo 2026 |
 
 Ver todas las novedades en [komuny.org/novedades](https://komuny.org/novedades)

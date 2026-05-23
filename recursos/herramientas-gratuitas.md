@@ -79,6 +79,16 @@ IA con Nueva Escuela Mexicana, DUA y proyectos sociocriticos.
 
 ---
 
+## Cursos Interactivos Gratuitos
+
+| Curso | Descripcion | Idiomas | Enlace |
+|-------|-------------|---------|--------|
+| **Zero to Claude Code** | 147 lecciones interactivas: de terminal y Git a programacion con IA. Terminal virtual en el navegador, sin instalar nada. Plan personalizado con IA, logros y comunidad de 8.000+ estudiantes. | Espanol, Ingles, Japones, Aleman, Arabe, Hebreo, Ucraniano | [zero2claude.dev](https://zero2claude.dev) |
+
+> **Recomendado por Komuny:** Zero to Claude Code es el complemento ideal para docentes que ya usan nuestras herramientas y quieren dar el siguiente paso -- de usuario de IA a creador con IA. Ver nuestra [nota completa](https://komuny.org/novedades/zero-a-claude-code).
+
+---
+
 ## ðŸ§© Estructura de un Prompt Efectivo
 
 ```
