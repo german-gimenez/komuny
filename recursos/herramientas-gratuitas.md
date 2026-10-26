@@ -12,7 +12,7 @@
 | **Claude** | Anthropic | Asistente general, planificacion, evaluacion | [claude.ai](https://claude.ai) |
 | **ChatGPT** | OpenAI | Asistente general, generacion de contenido | [chatgpt.com](https://chatgpt.com) |
 | **Gemini** | Google | Integrado en Google Workspace | [gemini.google.com](https://gemini.google.com) |
-| **Gemini Notebook** | Google | Analiza tus propios documentos sin alucinaciones (antes: NotebookLM, renombrado julio 2026) | [notebooklm.google.com](https://notebooklm.google.com) |
+| **Gemini Notebook** | Google | Analiza tus propios documentos sin alucinaciones ([antes NotebookLM, renombrado el 16 de julio de 2026](https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/)) | [notebooklm.google.com](https://notebooklm.google.com) |
 | **Khanmigo** | Khan Academy | Planificacion, rubricas, reportes para docentes | [khanmigo.ai/teachers](https://www.khanmigo.ai/es/teachers) |
 | **Copilot** | Microsoft | Integrado en Office 365 | [copilot.microsoft.com](https://copilot.microsoft.com) |
 

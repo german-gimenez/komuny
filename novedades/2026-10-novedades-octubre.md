@@ -45,7 +45,7 @@ El curso todavía acepta inscripciones. Para recibir el certificado, hay que com
 
 **Fuente:** [experience-ai.org](https://experience-ai.org) · [TVN Chile](https://www.tvn.cl/actualidad-y-tendencias/tendencias/experience-ai-llega-a-chile)
 
-**Experience AI** es un programa educativo creado por la **Raspberry Pi Foundation** y **Google DeepMind**, presente en más de 180 países. El 27 de octubre de 2026 se lanzó oficialmente en Chile de la mano de **Fundación Kodea** e IdeoDigital, con respaldo del Ministerio de Ciencia.
+**Experience AI** es un programa educativo creado por la **Raspberry Pi Foundation** y **Google DeepMind**, presente en más de 180 países. Se lanza oficialmente en Chile el martes 27 de octubre de 2026 a las 17:00, de la mano de **Fundación Kodea** e IdeoDigital, con respaldo del Ministerio de Ciencia.
 
 ### ¿Qué ofrece a los docentes?
 
