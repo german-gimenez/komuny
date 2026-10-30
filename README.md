@@ -117,6 +117,7 @@ Seguimos el ecosistema y respondemos con recursos concretos.
 
 | Novedad | Contexto | Fecha |
 |---------|----------|-------|
+| [Novedades semana 27–30 octubre 2026](novedades/2026-10-30-novedades-semana.md) | MagicSchool AI MagicDrop, MECAPACITO Ecuador, Experience AI taller CPEIP, DeepTutor, Education Agent Skills, e informes sobre IA y aprendizaje | 30 oct 2026 |
 | [Novedades de IA para educadores — Octubre 2026](novedades/2026-10-novedades-octubre.md) | UNESCO MOOC en espanol, Experience AI en Chile, Canva Learn Grid, Learning Arcade, MagicSchool AI y OpenMAIC | Octubre 2026 |
 | [Zero to Claude Code: de usuario de IA a creador con IA](novedades/2026-05-zero-a-claude-code.md) | Curso gratuito en espanol: 147 lecciones interactivas para aprender terminal, Git y programacion con IA desde cero | Mayo 2026 |
 | [El sistema educativo no esta en crisis — esta cumpliendo para lo que fue disenado](novedades/2026-05-reinvencion-educativa.md) | Respuesta a nota de Facundo Vazquez — reinvencion del modelo educativo industrial | Mayo 2026 |

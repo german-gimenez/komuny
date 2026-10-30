@@ -62,6 +62,15 @@
 
 ---
 
+## 🌍 Formacion Docente Regional — Convocatorias Abiertas
+
+| Programa | Pais | Contenido | Inscripcion | Enlace |
+|---------|------|-----------|-------------|--------|
+| **MECAPACITO — Cohorte 9** | Ecuador | 67 cursos virtuales gratuitos: IA educativa, herramientas digitales, pedagogia, evaluacion formativa. 40-200 hs + certificado oficial. | hasta 11/11/2026 | [mecapacito.educacion.gob.ec](https://mecapacito.educacion.gob.ec) |
+| **Experience AI — Taller CPEIP** | Chile | 4 sesiones online sobre IA en el aula para docentes de 6° basico a 4° medio, cualquier asignatura. Fundacion Kodea + CPEIP MINEDUC. | Inicio 29/10, sesiones hasta 19/11 | [redinnovacioneducativa.cl](https://www.redinnovacioneducativa.cl/actividades/aprende-sobre-inteligencia-artificial-junto-kodea-experience-ai) |
+
+---
+
 ## 🌐 Portales Regionales en Espanol
 
 ### Argentina — Educ.ar
@@ -90,6 +99,8 @@ IA con Nueva Escuela Mexicana, DUA y proyectos sociocriticos.
 | **Dify** | Crea agentes de IA con tus materiales | [github.com/langgenius/dify](https://github.com/langgenius/dify) |
 | **Generative AI for Beginners** | Curso 12 semanas de Microsoft | [github.com/microsoft](https://github.com/microsoft/generative-ai-for-beginners) |
 | **OpenMAIC** | Aula multi-agente open source: convierte cualquier tema en clase interactiva con slides, quizzes y simulaciones. 41.000+ estrellas. Licencia MIT. (Requiere servidor propio o Docker) | [github.com/THU-MAIC/OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) |
+| **DeepTutor** | Tutor IA personalizado self-hosted: apuntalo a tus propios PDFs o carpetas de curso, genera caminos de aprendizaje, quizzes calificados y mantiene memoria de lo dominado. 49.000+ estrellas. Licencia Apache 2.0. v1.7.0 (oct 2026). | [github.com/HKUDS/DeepTutor](https://github.com/HKUDS/DeepTutor) |
+| **Education Agent Skills** | 165 habilidades de agentes IA para docentes: planificacion, evaluacion, curriculo, aprendizaje y mas, respaldadas en investigacion pedagogica. Compatible con Claude / Agent Skills. Licencia CC BY-SA 4.0. v3.1.0 (oct 2026). | [github.com/GarethManning/education-agent-skills](https://github.com/GarethManning/education-agent-skills) |
 
 ---
 
@@ -115,5 +126,5 @@ RESTRICCION: "Sin laboratorio, solo materiales disponibles en el aula"
 
 ---
 
-*Actualizado octubre 2026 — investigacion por [Napsix.AI](https://napsix.ai/komuny)*
+*Actualizado 30 de octubre 2026 — investigacion por [Napsix.AI](https://napsix.ai/komuny)*
 *Contribuye en [GitHub](https://github.com/german-gimenez/komuny) — Komuny Edu*

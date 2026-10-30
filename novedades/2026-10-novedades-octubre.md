@@ -41,11 +41,13 @@ El curso todavía acepta inscripciones. Para recibir el certificado, hay que com
 
 ---
 
-## 2. 🤖 Experience AI desembarca en Chile
+## 2. 🤖 Experience AI desembarca en Chile ✅ Lanzado el 27 de octubre
 
-**Fuente:** [experience-ai.org](https://experience-ai.org) · [TVN Chile](https://www.tvn.cl/actualidad-y-tendencias/tendencias/experience-ai-llega-a-chile)
+**Fuente:** [experience-ai.org](https://experience-ai.org) · [TVN — anuncio previo](https://www.tvn.cl/actualidad-y-tendencias/tendencias/experience-ai-llega-a-chile) · [TVN — nota post-evento (28/10)](https://www.tvn.cl/exponencial/noticias/experience-ai-llego-chile-programa-global-busca-alfabetizar-educacion) · [Taller CPEIP MINEDUC desde el 29/10](https://www.redinnovacioneducativa.cl/actividades/aprende-sobre-inteligencia-artificial-junto-kodea-experience-ai)
 
-**Experience AI** es un programa educativo creado por la **Raspberry Pi Foundation** y **Google DeepMind**, presente en más de 180 países. Se lanza oficialmente en Chile el martes 27 de octubre de 2026 a las 17:00, de la mano de **Fundación Kodea** e IdeoDigital, con respaldo del Ministerio de Ciencia.
+**Experience AI** es un programa educativo creado por la **Raspberry Pi Foundation** y **Google DeepMind**, presente en más de 180 países. Se lanzó oficialmente en Chile el **martes 27 de octubre de 2026** en el Liceo Bicentenario Instituto Superior de Comercio (Insuco) N.º 2, de la mano de **Fundación Kodea** e IdeoDigital, con respaldo del Ministerio de Ciencia.
+
+**Actualización (29/10):** Fundación Kodea y el CPEIP del Ministerio de Educación lanzaron un taller online de cuatro sesiones (29 oct, 5, 12 y 19 de nov) para docentes de cualquier asignatura de 6.° básico a 4.° medio. Sin requisitos previos. Ver el taller →  [redinnovacioneducativa.cl](https://www.redinnovacioneducativa.cl/actividades/aprende-sobre-inteligencia-artificial-junto-kodea-experience-ai)
 
 ### ¿Qué ofrece a los docentes?
 
